@@ -1,0 +1,42 @@
+
+body {
+    font-family: Arial, serif;
+    color: slateblue;
+}
+
+#headerContainer {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+#headerContainer h1{
+    float: left;
+}
+
+#headerContainer button {
+    float: right;
+    width: 35px;
+    height: 30px;
+    color: blue;
+    margin-left: 65vw;
+    margin-top: 2.4vw;
+}
+
+#uiContainer {
+    color: lightcoral;
+    display: flex;
+
+    background: rgba(200, 0, 0, 0.1);
+}
+
+.timer{
+    margin-left: 20vw;
+
+}
+.score{
+    margin-left: 10vw;
+
+}
+.level{
+    margin-left: 15vw;
+}
