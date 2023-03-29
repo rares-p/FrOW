@@ -18,7 +18,7 @@ function makeGame(nrCol, nrLines)
             gameMap[i][j] = 0;
 
     let availableIndexes = new Array(nrCol*nrLines);
-    let nrCards = 4;
+    let nrCards = 17;
     for (let i = 0; i < nrCol * nrLines; i++)
         availableIndexes[i] = i;
     while (availableIndexes.length > 0)
@@ -107,7 +107,7 @@ function App() {
     </div>
   `;
 
-    makeGame(6, 3);
+    makeGame(5, 4);
 
     // INTERACTIUNE 
     const cards = document.querySelectorAll(".card");
