@@ -1,51 +1,136 @@
 
 body {
     font-family: Arial, serif;
-    color: slateblue;
+    font-family: 'Fredoka', sans-serif;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
 }
 
 #headerContainer {
-    display: inline-block;
-    background: rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 0px;
+    left: 0px;
+
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(235, 235, 235);
+    width: 100%;
+
+    justify-content: center;
+    align-items: center;
 }
 
 #headerContainer h1{
     float: left;
+    color: rgb(121,167,218);
+    max-height: 10vh;
 }
 
 #headerContainer button {
     float: right;
     width: 35px;
     height: 30px;
-    color: blue;
+    color: rgb(121,167,218);
     margin-left: 65vw;
-    margin-top: 2.4vw;
+}
+
+#logo{
+    max-height: 12vh;
+}
+
+#bar{
+    width: 100%;
+    position: relative;
+    left: 0px;
+    top: -20px;
 }
 
 #uiContainer {
-    color: lightcoral;
+    position: relative;
+    top: -8vh;
+    max-height: 8vh;
+    color: white;
     display: flex;
+    
+    margin: 0;
+    margin-top: 4vh;
+    margin-left: 15vh;
+    margin-right: 15vh;
 
-    background: rgba(200, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
 }
 
-.timer{
-    margin-left: 20vw;
-
+#uiContainer h1{
+    font-size: 5vh;
 }
-.score{
-    margin-left: 10vw;
 
+#timer{
+    flex: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.level{
-    margin-left: 15vw;
+
+#timerImage{
+    max-height: 7vh;
+}
+
+.cifra{
+    max-height: 7vh;
+    margin: 0px;
+}
+
+#timer img:nth-of-type(3){
+    transform: translateX(-10px);
+}
+#timer img:nth-of-type(4){
+    transform: translateX(-20px);
+}
+
+#score{
+    flex: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#score img:nth-of-type(2){
+    transform: translateX(-10px);
+}
+#score img:nth-of-type(3){
+    transform: translateX(-20px);
+}
+
+#level{
+    flex: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#level img:nth-of-type(2){
+    transform: translateX(-10px);
+}
+#level img:nth-of-type(3){
+    transform: translateX(-20px);
 }
 
 #game{
+    position: relative;
+    top: 20vh;
+
     display: flex;
     margin-left: 15vw;
     margin-right: 15vw;
-    margin-top: 2vw;
+    margin-top: 4vw;
 }
 
 .cardsRow{
@@ -113,3 +198,35 @@ body {
     transform: rotateY(180deg);
 }
 
+
+
+/*
+ANIMATIONS
+*/
+
+.wobble {
+	animation: wobble 0.6s both;
+}
+
+@keyframes wobble {
+    0%,
+    100% {
+        transform: translateX(0%);
+        transform-origin: 50% 50%;
+    }
+    15% {
+        transform: translateX(-30px) rotate(-6deg);
+    }
+    30% {
+        transform: translateX(15px) rotate(6deg);
+    }
+    45% {
+        transform: translateX(-15px) rotate(-3.6deg);
+    }
+    60% {
+        transform: translateX(9px) rotate(2.4deg);
+    }
+    75% {
+        transform: translateX(-6px) rotate(-1.2deg);
+    }
+  }

@@ -3,6 +3,7 @@ import Card from './components/Card.js'
 
 let numberFlipped = 0;
 let gameMap = [];
+let timer = 180;
 
 function makeGame(nrCol, nrLines)
 {
@@ -87,22 +88,59 @@ function checkForMatch()
     numberFlipped = 0;
 }
 
+function updateTimer()
+{
+    timer --;
+    let timerObj = document.getElementById("timer");
+    let cifra1 = Math.floor(timer / 100);
+    let cifra2 = Math.floor(timer%100 / 10);
+    let cifra3 = Math.floor(timer%10);
+    
+    if (cifra1 == 0)
+        timerObj.childNodes[3].src = "../src/media/empty.png";
+    else
+        timerObj.childNodes[3].src = "../src/media/nr" + cifra1 + ".png";
+
+    if (cifra2 == 0 && cifra1 == 0)
+        timerObj.childNodes[5].src = "../src/media/empty.png";
+    else
+        timerObj.childNodes[5].src = "../src/media/nr" + cifra2 + ".png";
+
+    if (cifra3 == 0 && cifra2 == 0 && cifra1 == 0)
+        timerObj.childNodes[7].src = "../src/media/empty.png";
+    else
+        timerObj.childNodes[7].src = "../src/media/nr" + cifra3 + ".png";
+
+    if (cifra3 == 0)
+        timerObj.classList.add("wobble");
+    else
+        timerObj.classList.remove("wobble");
+}
+
 function App() {
 
     const header = document.createElement('header')
     header.innerHTML = `
-    <div id="headerContainer">
-      ${Header()}
-    </div>
+    ${Header()}
+    <img id="bar" src="src/media/bar.png">
     <div id="uiContainer">
-        <div  class="timer">
-            <h1>24</h1>
+        <div  id="timer">
+            <img id ="timerImage" src="src/media/timer.png">
+            <img class="cifra" src="src/media/nr1.png">
+            <img class="cifra" src="src/media/nr8.png">
+            <img class="cifra" src="src/media/nr0.png">
         </div>
-        <div class="score">
-            <h1>Score:650</h1>
+        <div id="score">
+            <h1>Score:</h1>
+            <img class="cifra" src="src/media/nr3.png">
+            <img class="cifra" src="src/media/nr5.png">
+            <img class="cifra" src="src/media/nr0.png">
         </div>
-        <div class="level">
+        <div id="level">
             <h1>Level:</h1>
+            <img class="cifra" src="src/media/levelHard.png">
+            <img class="cifra" src="src/media/levelHard.png">
+            <img class="cifra" src="src/media/levelHard.png">
         </div>
     </div>
   `;
@@ -137,6 +175,13 @@ function App() {
         
     });
     });
+
+    
+    let timerInterval = setInterval(function() {
+        updateTimer();
+        if (timer == 0)
+            clearInterval(timerInterval);
+    }, 1000);
 
     console.log("Template is " + header.innerHTML)
     return header.cloneNode(true);
