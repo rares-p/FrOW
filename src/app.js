@@ -31,7 +31,7 @@ function makeGame(nrCol, nrLines)
         {
             let indexRandom = Math.floor(Math.random() * availableIndexes.length);
             let actualIndex = availableIndexes[indexRandom];
-            gameMap[Math.floor(actualIndex/nrCol)][actualIndex%(nrLines+1)] = cardIndexRandom;
+            gameMap[Math.floor(actualIndex/nrCol)][actualIndex%nrCol] = cardIndexRandom;
             //console.innerText = console.innerText + " " + actualIndex + "(" + cardIndexRandom + ")";
             availableIndexes.splice(indexRandom, 1);
         }
@@ -107,7 +107,7 @@ function App() {
     </div>
   `;
 
-    makeGame(4, 3);
+    makeGame(6, 3);
 
     // INTERACTIUNE 
     const cards = document.querySelectorAll(".card");
