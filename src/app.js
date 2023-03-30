@@ -4,6 +4,8 @@ import Card from './components/Card.js'
 let numberFlipped = 0;
 let gameMap = [];
 let timer = 180;
+let score = 0;
+let timerInterval;
 
 function makeGame(nrCol, nrLines)
 {
@@ -73,6 +75,7 @@ function checkForMatch()
     let idSecondCard = cards[1].childNodes[3].src;
     if (idFirstCard == idSecondCard)
     {
+        addScore(50);
         cards.forEach((card) => {
             // sa dispara front si back si sa apara outline
             card.childNodes[1].style.opacity = '0';
@@ -80,12 +83,65 @@ function checkForMatch()
             card.childNodes[5].style.opacity = '1';
         });
     }
+    else
+    {
+        addScore(-10);
+    }
 
     cards.forEach((card) => {
         card.classList.remove("is-flipped");
     });
 
     numberFlipped = 0;
+}
+
+function addScore(value)
+{
+    let scoreObj = document.getElementById("score");
+    score = score + value;
+    if (score < 0)
+        score = 0;
+    
+    let cifra1 = Math.floor(score / 1000);
+    let cifra2 = Math.floor(score%1000 / 100);
+    let cifra3 = Math.floor(score%100 / 10);
+    let cifra4 = Math.floor(score%10);
+
+    if (cifra1 == 0)
+        scoreObj.childNodes[3].src = "../src/media/empty.png";
+    else
+        scoreObj.childNodes[3].src = "../src/media/nr" + cifra1 + ".png";
+    
+    if (cifra2 == 0 && cifra1 == 0)
+        scoreObj.childNodes[5].src = "../src/media/empty.png";
+    else
+        scoreObj.childNodes[5].src = "../src/media/nr" + cifra2 + ".png";
+
+    if (cifra3 == 0 && cifra2 == 0 && cifra1 == 0)
+        scoreObj.childNodes[7].src = "../src/media/empty.png";
+    else
+        scoreObj.childNodes[7].src = "../src/media/nr" + cifra3 + ".png";
+
+    if (cifra4 == 0 && cifra3 == 0 && cifra2 == 0 && cifra1 == 0)
+        scoreObj.childNodes[9].src = "../src/media/empty.png";
+    else
+        scoreObj.childNodes[9].src = "../src/media/nr" + cifra4 + ".png";
+    
+    scoreObj.classList.add("wobble");
+    setTimeout(function(){
+        scoreObj.classList.remove("wobble");
+    }, 1000);
+
+}
+
+
+function startTimer()
+{
+    timerInterval = setInterval(function() {
+        updateTimer();
+        if (timer == 0)
+            clearInterval(timerInterval);
+    }, 1000);
 }
 
 function updateTimer()
@@ -132,9 +188,10 @@ function App() {
         </div>
         <div id="score">
             <h1>Score:</h1>
-            <img class="cifra" src="src/media/nr3.png">
-            <img class="cifra" src="src/media/nr5.png">
-            <img class="cifra" src="src/media/nr0.png">
+            <img class="cifra" src="src/media/empty.png">
+            <img class="cifra" src="src/media/empty.png">
+            <img class="cifra" src="src/media/empty.png">
+            <img class="cifra" src="src/media/empty.png">
         </div>
         <div id="level">
             <h1>Level:</h1>
@@ -145,7 +202,7 @@ function App() {
     </div>
   `;
 
-    makeGame(5, 4);
+    makeGame(6, 4);
 
     // INTERACTIUNE 
     const cards = document.querySelectorAll(".card");
@@ -154,6 +211,11 @@ function App() {
 
     cards.forEach((card) => {
     card.addEventListener("click", function(){
+
+        // start timer at first click
+        if (timerInterval == null)
+            startTimer();
+
         let opacity = card.childNodes[3].style.opacity;
         // dam flip la card doar daca nu sunt deja flipped2, daca nu a disparut deja si daca nu este deja flipped
         if (numberFlipped < 2 && opacity == 1 && (!card.classList.contains('is-flipped')))
@@ -175,13 +237,6 @@ function App() {
         
     });
     });
-
-    
-    let timerInterval = setInterval(function() {
-        updateTimer();
-        if (timer == 0)
-            clearInterval(timerInterval);
-    }, 1000);
 
     console.log("Template is " + header.innerHTML)
     return header.cloneNode(true);

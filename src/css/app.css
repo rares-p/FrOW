@@ -109,6 +109,9 @@ header{
 #score img:nth-of-type(3){
     transform: translateX(-20px);
 }
+#score img:nth-of-type(4){
+    transform: translateX(-30px);
+}
 
 #level{
     flex: 33%;
@@ -179,6 +182,8 @@ header{
     position: relative;
     transition: 1s;
     transform-style: preserve-3d;
+
+    cursor: pointer;
 }
 
 .card_face {
