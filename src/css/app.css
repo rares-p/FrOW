@@ -180,7 +180,7 @@ header{
     width: 100%;
     height: 100%;
     position: relative;
-    transition: 1s;
+    transition: 0.5s; /* turn back to normal*/
     transform-style: preserve-3d;
 
     cursor: pointer;
@@ -192,7 +192,7 @@ header{
     width: 100%;
     backface-visibility: hidden;
 
-    transition: 1s;
+    /*transition: 1s;*/
 }
 
 .card_face--front {
@@ -200,6 +200,7 @@ header{
 }
 
 .card.is-flipped {
+    transition: 0.9s; /* turn to show face */
     transform: rotateY(180deg);
 }
 
