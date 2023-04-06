@@ -32,7 +32,9 @@ header{
 #headerContainer h1{
     float: left;
     color: rgb(121,167,218);
-    max-height: 10vh;
+    font-size: 4vw;
+    max-height: 8vh;
+
 }
 
 #headerContainer button {
@@ -40,7 +42,7 @@ header{
     width: 35px;
     height: 30px;
     color: rgb(121,167,218);
-    margin-left: 65vw;
+    margin-left: 50vw;
 }
 
 #logo{
@@ -60,8 +62,8 @@ header{
     max-height: 8vh;
     color: white;
     display: flex;
-    
-    margin: 0;
+
+    margin-bottom: 0vh;
     margin-top: 4vh;
     margin-left: 15vh;
     margin-right: 15vh;
