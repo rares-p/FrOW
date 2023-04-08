@@ -199,7 +199,7 @@ function App() {
     <img id="bar" src="src/media/bar.png">
     <div id="uiContainer">
         <div  id="timer">
-            <img id ="timerImage" src="src/media/timer.png">
+            <img class="cifra" src="src/media/timer.png">
             <img class="cifra" src="src/media/nr1.png">
             <img class="cifra" src="src/media/nr8.png">
             <img class="cifra" src="src/media/nr0.png">

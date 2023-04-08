@@ -25,6 +25,8 @@ header{
     background-color: rgb(235, 235, 235);
     width: 100%;
 
+    max-height: 12vh;
+
     justify-content: center;
     align-items: center;
 }
@@ -53,7 +55,7 @@ header{
     width: 100%;
     position: relative;
     left: 0px;
-    top: -20px;
+    top: -1vw;
 }
 
 #uiContainer {
@@ -63,6 +65,7 @@ header{
     color: white;
     display: flex;
 
+    
     margin-bottom: 0vh;
     margin-top: 4vh;
     margin-left: 15vh;
@@ -93,10 +96,10 @@ header{
 }
 
 #timer img:nth-of-type(3){
-    transform: translateX(-10px);
+    transform: translateX(-1vw);
 }
 #timer img:nth-of-type(4){
-    transform: translateX(-20px);
+    transform: translateX(-2vw);
 }
 
 #score{
@@ -106,13 +109,13 @@ header{
     align-items: center;
 }
 #score img:nth-of-type(2){
-    transform: translateX(-10px);
+    transform: translateX(-1vw);
 }
 #score img:nth-of-type(3){
-    transform: translateX(-20px);
+    transform: translateX(-2vw);
 }
 #score img:nth-of-type(4){
-    transform: translateX(-30px);
+    transform: translateX(-3vw);
 }
 
 #level{
@@ -204,6 +207,56 @@ header{
 .card.is-flipped {
     transition: 0.9s; /* turn to show face */
     transform: rotateY(180deg);
+}
+
+
+@media only screen and (max-width: 900px) {
+    .cifra{
+        max-height: 6vw;
+    }
+    #uiContainer h1{
+        font-size: 6vw;
+    }
+
+    #headerContainer h1{
+        font-size: 3vw;
+    }
+
+    #uiContainer {
+        top: -5vw;
+    }
+
+    #logo{
+        max-height: 10vw;
+        margin-left: 5vw;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #headerContainer h1{
+        font-size: 4vw;
+    }
+    #uiContainer {
+        top: -7vw;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .backCard{
+        min-height: 24vw;
+        width: auto;
+        min-width: 18vw;
+        max-width: 18vw;
+        max-width: 12vh;
+    }
+
+    #logo{
+        max-height: 12vw;
+    }
+
+    #headerContainer h1{
+        font-size: 6vw;
+    }
 }
 
 
