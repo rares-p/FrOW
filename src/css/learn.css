@@ -83,6 +83,12 @@ header{
     transform: translate(-50%, -50%);*/
 }
 
+#learnContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #container{
     background-color: antiquewhite;
     /*left: 10%;
@@ -100,9 +106,9 @@ header{
     position:initial;
     display: flex;
     justify-content: center;
-    margin-top: 300px;
+    margin-top: 15%;
     margin-bottom: 300px;
-    min-width: 700px;
+    width: 70%;
 }
 
 #leftArrow{
