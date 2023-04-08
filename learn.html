@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale =1.0"/>
+    <title>Fruit App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/learn.css">
+</head>
+<body>
+    <noscript>Please enable javascript for this app to work.</noscript>
+
+    <img class="backgroundImage" src="src/media/background.png">
+    
+    <header>
+        <header id="headerContainer">
+            <img id="logo" src="../src/media/logo.png">
+            <h1>Fruits on the web</h1>
+            <button>
+                &#9776;
+            </button>
+        </header>
+        <img id="bar" src="src/media/bar.png">
+    </header>
+
+    <div id="container">
+        <p style="right: 0;display: inline-block;">Click the arrows to learn more about fruits and vegetables!</p>
+        <div id="slideShow" style="display: inline-block;">
+            <button id="leftArrow" onclick="previousImage()"><img src="src/media/arrow2.png"/></button>
+            <img src="src/media/FaceCard1.png" id="fruitCard">
+            <button id="rightArrow" onclick="nextImage()"><img src="src/media/arrow3.png"/></button>
+        </div>
+        <div class="paragraph">
+            <h3 id="fruitName">Lemon</h3>
+            <p id="description"></p>
+        </div>
+        <div class="paragraph">
+            <h3>Vitamnins</h3>
+            <p id="vitamins"></p>
+        </div>
+    </div>
+    <script src="src/about.js"></script>
+</body>
+</html>

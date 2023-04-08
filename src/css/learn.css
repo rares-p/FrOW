@@ -1,0 +1,148 @@
+
+body {
+    font-family: Arial, serif;
+    font-family: 'Fredoka', sans-serif;
+    overflow: visible;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+}
+
+#headerContainer {
+    position: relative;
+    top: 0px;
+    left: 0px;
+
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(235, 235, 235);
+    width: 100%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#headerContainer h1{
+    float: left;
+    color: rgb(121,167,218);
+    font-size: 4vw;
+    max-height: 8vh;
+
+}
+
+#headerContainer button {
+    float: right;
+    width: 35px;
+    height: 30px;
+    color: rgb(121,167,218);
+    margin-left: 50vw;
+}
+
+#logo{
+    max-height: 12vh;
+}
+
+#bar{
+    width: 100%;
+    position: relative;
+    left: 0px;
+    top: -20px;
+}
+
+.backgroundImage{
+    top: 0; 
+    left: 0; 
+    z-index: -1;
+    min-height: 100%;
+    position: fixed;
+        
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#slideShow{
+    background-color:rgb(31, 51, 71);
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 50px;
+    align-content: center;
+    position: relative;
+    min-width: 550px;
+    align-self: center;
+    /*left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);*/
+}
+
+#container{
+    background-color: antiquewhite;
+    /*left: 10%;
+    position: relative;
+    flex: 25%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    right: 50%;
+    min-width: 1000px;
+    margin-bottom: 500px;*/
+    align-self:center;
+    flex-direction: column;
+    position:initial;
+    display: flex;
+    justify-content: center;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 300px;
+    margin-bottom: 300px;
+}
+
+#leftArrow{
+    background-color: transparent;
+    border: 0px;
+    display: flex;
+    align-content: center;
+    position: relative;
+    flex-direction: row;
+    top: 50%;
+}
+
+#fruitCard{
+    width: 300px;
+    float: left;
+    min-width: 300px;
+    min-height: 300px;
+}
+
+#leftArrow{
+    background-color: transparent;
+    border: 0px;
+    display:block;
+    float: left;
+    left: 0;
+    margin-top: 25%;
+}
+
+#rightArrow{
+    background-color: transparent;
+    border: 0px;
+    display: flexbox;
+    float: left;
+    margin-top: 25%;
+}
+
+.paragraph{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: block;
+    left: 0;
+    float: left;
+}
