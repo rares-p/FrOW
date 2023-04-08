@@ -47,7 +47,8 @@ header{
 }
 
 #logo{
-    max-height: 12vh;
+    width: 5vw;
+    height: 5vw;
 }
 
 #bar{
