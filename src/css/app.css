@@ -21,43 +21,28 @@ header {
     text-align: center;
 }
 
-#menuLogo {
-    position: relative;
-
+#menuLogo{
+    display: flex;
+    flex-direction: column;
 }
-
-#menuLogo svg {
-    position: absolute;
-    margin-left: -17vw;
+#logoText {
+    margin-top: -15vh;
+    scale: 30%;
 }
-
-#menuLogo text {
-    font-size: 2.8vw;
-    fill: white;
-
-}
-
-#menuLogo path {
-    fill: transparent;
-}
-#menuLogo img{
-    position: absolute;
-    top:10vh;
-    right:50vw;
+#logoImage{
+    margin-top: -68vh;
+    scale: 26%;
+    margin-bottom: -40vh;
 }
 
 #menuButtons {
-    margin-top: 49vh;
-    margin-left: 35vw;
+    margin-left: 39vw;
     margin-right: 43vw;
     position: relative;
 }
 
 #menuButtons div {
 
-}
-
-#startButton {
 }
 
 
@@ -75,18 +60,59 @@ header {
     font-family: 'Fredoka', sans-serif;
 }
 
-#menuButtons button:active {
+#menuButtons button:hover {
     background-color: rgba(101, 90, 225);
     color: white;
-    transition: 0.1s;
+    transition: 0.2s;
 }
+#startButton:hover ~ #startImage{
+    transition: 0.2s;
+    opacity: 1;
+}
+#learnButton:hover ~ #learnImage{
+    transition: 0.2s;
+    opacity: 1;
+}
+#highscoresButton:hover ~ #highscoresImage{
+     transition: 0.2s;
+     opacity: 1;
+ }
+#aboutButton:hover ~ #aboutImage{
+      transition: 0.2s;
+      opacity: 1;
+  }
 
-#menuButtons img {
+#startImage{
     scale: 60%;
     z-index: 99;
     position: absolute;
     left: -4.5vw;
     top: -1.25vh;
+    opacity: 0;
+}
+#learnImage{
+    scale: 60%;
+    z-index: 99;
+    position: absolute;
+    left: -4.5vw;
+    top: 9vh;
+    opacity: 0;
+}
+#highscoresImage{
+    scale: 60%;
+    z-index: 99;
+    position: absolute;
+    left: -4.5vw;
+    top: 19.25vh;
+    opacity: 0;
+}
+#aboutImage{
+    scale: 60%;
+    z-index: 99;
+    position: absolute;
+    left: -4.5vw;
+    top: 29.5vh;
+    opacity: 0;
 }
 
 #headerContainer {
