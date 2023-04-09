@@ -179,6 +179,12 @@ header{
     float: right;
 }
 
+#searchContainer form{
+    position: relative;
+    float: right;
+    margin: 2rem;
+}
+
 #searchFruit{
     border-radius: 0.5vw;
     border: 0.1vw solid black;
