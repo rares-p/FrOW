@@ -15,6 +15,42 @@ header{
     z-index: 999;
 }
 
+#menu{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#logoText{
+    margin-bottom: -30vh;
+    font-size: 5vw;
+}
+#logoText svg{
+
+}
+#logoText text{
+    fill: white;
+}
+#logoText path{
+    fill: transparent;
+}
+#menuLogo{
+
+
+
+}
+#menuButtons{
+
+    margin-top: 10vh;
+    margin-left: 35vw;
+    margin-right: 35vw;
+}
+#menuButtons button{
+    width: 30vw;
+    height: 5vh;
+    margin-top: 0.9vh;
+}
+
 #headerContainer {
     position: relative;
     top: 0px;

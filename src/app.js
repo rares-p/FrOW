@@ -15,6 +15,7 @@ let bonusScore = 15; // each wrong guess reduces this by 5, resets on guess
 let timeSinceLastGuess = 10; // each second passed reduces this by 1, resets on guess
 
 const ANIMATION_DURATION = 1400 // duration to flip card and to return from being flipped
+
 function makeGame(nrCol, nrLines, startTime) {
     //const console = document.getElementById('console');
     if (nrCol % 2 === 1 && nrLines % 2 === 1) {
