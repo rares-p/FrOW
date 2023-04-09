@@ -17,38 +17,35 @@
 <div id="menu">
 
     <div id="menuLogo">
-        <svg width="40vw" height="40vh">
-            <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"/>
-            <text color="white">
-                <textPath xlink:href="#curve">
-                    Fruits on the web
-                </textPath>
-            </text>
-        </svg>
-        <img id="logoImage" src="src/media/logo.png">
+        <img id="logoText" src="src/media/title.png">
+        <img id="logoImage" src="src/media/allfruits.png">
     </div>
 
     <div id="menuButtons">
-        <div id="startButton">
-            <img src="src/media/logo.png">
-            <button onclick="startGame()">
+        <div >
+            <button id="startButton" onclick="startGame()">
                 START
             </button>
+            <img id="startImage" src="src/media/logo.png">
+
         </div>
-        <div id="learnButton">
-            <button onclick="learn()">
+        <div >
+            <button id="learnButton" onclick="learn()">
                 LEARN
             </button>
+            <img id="learnImage" src="src/media/logo.png">
         </div>
-        <div id="highscoresButton">
-            <button onclick="highscores()">
+        <div >
+            <button id="highscoresButton" onclick="highscores()">
                 HIGHSCORES
             </button>
+            <img id="highscoresImage" src="src/media/logo.png">
         </div>
-        <div id="aboutButton">
-            <button>
+        <div >
+            <button id="aboutButton" >
                 ABOUT
             </button>
+            <img id="aboutImage" src="src/media/logo.png">
         </div>
     </div>
 </div>
