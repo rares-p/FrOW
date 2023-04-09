@@ -18,7 +18,7 @@
         <header id="headerContainer">
             <img id="logo" src="../src/media/logo.png">
             <h1>Fruits on the web</h1>
-            <button onclick={location.replace("./menu.html")}>
+            <button onclick="location.replace('./menu.html')">
                 &#9776;
             </button>
         </header>
@@ -26,15 +26,15 @@
     </header>
     <div id="learnContainer">
         <div id="container">
-            <div>
-                <div id="containerTitle">
-                    <p>Click the arrows to learn more about fruits and vegetables!</p>
+            <div id = "upperContainer">
+                <div id="upperInfo">
+                    <img id ="logoInfo" src="src/media/decoration4.png">
+                    <p>Search for fruits and vegetables or click the arrows!</p>
                 </div>
                 <div id="searchContainer">
                     <form onsubmit="" role="">
-                        <label for="search">Search for stuff</label>
-                        <input id="" type="" placeholder="Search..." autofocus required />
-                        <button id="searchFruit" type="submit"><img src="src/media/search.png"></button>    
+                        <input id="searchBar" type="text" placeholder="Search..." autofocus required />
+                        <button id="searchFruit" type="submit"><img id="searchFruitImg" src="src/media/search.png"></button>    
                     </form>
                 </div>
             </div>
