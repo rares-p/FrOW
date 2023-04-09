@@ -34,19 +34,17 @@ header {
     max-width: 25vw;
 }
 
-#menuButtons {
-    margin-left: 39vw;
-    margin-right: 43vw;
-    position: relative;
-}
-
-#menuButtons div {
-
+.alignCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 #menuButtons button {
-    width: 22vw;
+    transform: translateX(2vw);
+
+    width: 25vw;
     height: 8vh;
     margin-top: 2.5vh;
     border: hidden;
@@ -67,53 +65,34 @@ header {
     transition: 0.2s;
 }
 #startButton:hover ~ #startImage{
-    transition: 0.2s;
     opacity: 1;
 }
 #learnButton:hover ~ #learnImage{
-    transition: 0.2s;
     opacity: 1;
 }
 #highscoresButton:hover ~ #highscoresImage{
-     transition: 0.2s;
-     opacity: 1;
+    opacity: 1;
  }
 #aboutButton:hover ~ #aboutImage{
-      transition: 0.2s;
-      opacity: 1;
-  }
+    opacity: 1;
+}
 
-#startImage{
-    scale: 60%;
-    z-index: 99;
-    position: absolute;
-    left: -4.5vw;
-    top: -1.25vh;
-    opacity: 0;
+#startImage, #learnImage, #highscoresImage, #aboutImage{
+    opacity:0;
+    transition: 0.3s;
 }
-#learnImage{
-    scale: 60%;
-    z-index: 99;
-    position: absolute;
-    left: -4.5vw;
-    top: 9vh;
-    opacity: 0;
+
+.containerButton{
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
 }
-#highscoresImage{
-    scale: 60%;
-    z-index: 99;
-    position: absolute;
-    left: -4.5vw;
-    top: 19.25vh;
-    opacity: 0;
-}
-#aboutImage{
-    scale: 60%;
-    z-index: 99;
-    position: absolute;
-    left: -4.5vw;
-    top: 29.5vh;
-    opacity: 0;
+
+.buttonImg{
+    width: 5vw;
+    height: 5vw;
+    transform: translateX(-1vw);
 }
 
 #headerContainer {
@@ -348,6 +327,23 @@ header {
 
     #uiContainer {
         top: -7vw;
+    }
+
+    .buttonImg{
+        width: 10vw;
+        height: 10vw;
+    }
+
+    #logoText {
+        max-width: 50vw;
+    }
+    #logoImage{
+        max-width: 50vw;
+    }
+
+    #menuButtons button {
+        width: 50vw;
+        height: 6vh;
     }
 }
 
