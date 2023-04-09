@@ -95,6 +95,52 @@ header {
     transform: translateX(-1vw);
 }
 
+#difficultyPage{
+    margin-top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#sliders{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2vh;
+    margin-bottom: 20vh;
+
+    text-align: center;
+}
+#sliders .slider {
+    -webkit-appearance: none;
+    width: 25vw;
+    height: 1.5vh;
+    border-radius: 0.5vh;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+#sliders .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.25vw;
+    height: 2.75vh;
+    border-radius: 50%;
+    background: rgba(101, 90, 225);
+    cursor: pointer;
+}
+#sliders .slider::-moz-range-thumb {
+    width: 1.25vw;
+    height: 2.75vh;
+    border-radius: 50%;
+    background: rgba(101, 90, 225);
+    cursor: pointer;
+}
+
+
 #headerContainer {
     position: relative;
     top: 0px;

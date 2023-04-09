@@ -203,7 +203,11 @@ function updateTimer() {
 }
 
 function App() {
-    makeGame(4, 4, 90);
+    const ROWS = sessionStorage.getItem("rows");
+    const COLS = sessionStorage.getItem("cols");
+    const TIME = sessionStorage.getItem("time");
+    console.log(ROWS + " " + COLS + " " + TIME + " " + typeof ROWS);
+    makeGame(COLS, ROWS, TIME);
     // calculate the start time
     let cifra1 = Math.floor(currentTime / 100);
     let cifra2 = Math.floor(currentTime % 100 / 10);
@@ -249,7 +253,7 @@ function App() {
             <img class="cifra" src="src/media/empty.png">
         </div>
         <div id="level">
-            <h1>Level:</h1>
+            <h1>Difficulty:</h1>
             <img class="cifra" src="src/media/levelHard.png">
             <img class="cifra" src="src/media/levelHard.png" style="visibility: ${level2}">
             <img class="cifra" src="src/media/levelHard.png" style="visibility: ${level3}">
