@@ -4,7 +4,7 @@ body {
     font-family: 'Fredoka', sans-serif;
 }
 
-header{
+header {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -15,40 +15,78 @@ header{
     z-index: 999;
 }
 
-#menu{
+#menu {
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-#logoText{
-    margin-bottom: -30vh;
-    font-size: 5vw;
-}
-#logoText svg{
+#menuLogo {
+    position: relative;
 
 }
-#logoText text{
-    fill: white;
+
+#menuLogo svg {
+    position: absolute;
+    margin-left: -17vw;
 }
-#logoText path{
+
+#menuLogo text {
+    font-size: 2.8vw;
+    fill: white;
+
+}
+
+#menuLogo path {
     fill: transparent;
 }
-#menuLogo{
-
-
-
+#menuLogo img{
+    position: absolute;
+    top:10vh;
+    right:50vw;
 }
-#menuButtons{
 
-    margin-top: 10vh;
+#menuButtons {
+    margin-top: 49vh;
     margin-left: 35vw;
-    margin-right: 35vw;
+    margin-right: 43vw;
+    position: relative;
 }
-#menuButtons button{
-    width: 30vw;
-    height: 5vh;
-    margin-top: 0.9vh;
+
+#menuButtons div {
+
+}
+
+#startButton {
+}
+
+
+#menuButtons button {
+    width: 22vw;
+    height: 8vh;
+    margin-top: 2.5vh;
+    border: hidden;
+    border-radius: 4vh;
+    box-shadow: -1vh 1vh 2vh rgba(0, 0, 0, 0.4);
+
+    font-size: 2.3vw;
+    font-weight: bold;
+    color: rgb(121, 167, 218);
+    font-family: 'Fredoka', sans-serif;
+}
+
+#menuButtons button:active {
+    background-color: rgba(101, 90, 225);
+    color: white;
+    transition: 0.1s;
+}
+
+#menuButtons img {
+    scale: 60%;
+    z-index: 99;
+    position: absolute;
+    left: -4.5vw;
+    top: -1.25vh;
 }
 
 #headerContainer {
@@ -67,9 +105,9 @@ header{
     align-items: center;
 }
 
-#headerContainer h1{
+#headerContainer h1 {
     float: left;
-    color: rgb(121,167,218);
+    color: rgb(121, 167, 218);
     font-size: 4vw;
     max-height: 8vh;
 
@@ -79,16 +117,16 @@ header{
     float: right;
     width: 35px;
     height: 30px;
-    color: rgb(121,167,218);
+    color: rgb(121, 167, 218);
     margin-left: 50vw;
 }
 
-#logo{
+#logo {
     width: 5vw;
     height: 5vw;
 }
 
-#bar{
+#bar {
     width: 100%;
     position: relative;
     left: 0px;
@@ -102,7 +140,7 @@ header{
     color: white;
     display: flex;
 
-    
+
     margin-bottom: 0vh;
     margin-top: 4vh;
     margin-left: 15vh;
@@ -112,63 +150,69 @@ header{
     align-items: center;
 }
 
-#uiContainer h1{
+#uiContainer h1 {
     font-size: 5vh;
 }
 
-#timer{
+#timer {
     flex: 33%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#timerImage{
+#timerImage {
     max-height: 7vh;
 }
 
-.cifra{
+.cifra {
     max-height: 7vh;
     margin: 0px;
 }
 
-#timer img:nth-of-type(3){
+#timer img:nth-of-type(3) {
     transform: translateX(-1vw);
 }
-#timer img:nth-of-type(4){
+
+#timer img:nth-of-type(4) {
     transform: translateX(-2vw);
 }
 
-#score{
+#score {
     flex: 33%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#score img:nth-of-type(2){
+
+#score img:nth-of-type(2) {
     transform: translateX(-1vw);
 }
-#score img:nth-of-type(3){
+
+#score img:nth-of-type(3) {
     transform: translateX(-2vw);
 }
-#score img:nth-of-type(4){
+
+#score img:nth-of-type(4) {
     transform: translateX(-3vw);
 }
 
-#level{
+#level {
     flex: 33%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#level img:nth-of-type(2){
+
+#level img:nth-of-type(2) {
     transform: translateX(-10px);
 }
-#level img:nth-of-type(3){
+
+#level img:nth-of-type(3) {
     transform: translateX(-20px);
 }
 
-#game{
+#game {
     position: relative;
     top: 20vh;
 
@@ -178,7 +222,7 @@ header{
     margin-top: 4vw;
 }
 
-.cardsRow{
+.cardsRow {
     flex: 25%;
     width: 25%;
     display: flex;
@@ -187,7 +231,7 @@ header{
     align-items: center;
 }
 
-.backCard{
+.backCard {
     min-height: 16vh;
     width: auto;
     min-width: 12vh;
@@ -204,21 +248,21 @@ header{
 
     filter: drop-shadow(-0.15vh 0.15vh 1vh rgba(55, 50, 156, 100));
 
-    
+
 }
 
-.backgroundImage{
-    position: fixed; 
-    top: 0; 
-    left: 0; 
+.backgroundImage {
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: -1;
-        
+
     /* Preserve aspet ratio */
     min-width: 100%;
     min-height: 100%;
 }
 
-.card{
+.card {
     width: 100%;
     height: 100%;
     position: relative;
@@ -238,7 +282,7 @@ header{
 }
 
 .card_face--front {
-    transform: rotateY( 180deg );
+    transform: rotateY(180deg);
 }
 
 .card.is-flipped {
@@ -248,14 +292,15 @@ header{
 
 
 @media only screen and (max-width: 900px) {
-    .cifra{
+    .cifra {
         max-height: 6vw;
     }
-    #uiContainer h1{
+
+    #uiContainer h1 {
         font-size: 6vw;
     }
 
-    #headerContainer h1{
+    #headerContainer h1 {
         font-size: 3vw;
     }
 
@@ -263,23 +308,24 @@ header{
         top: -5vw;
     }
 
-    #logo{
+    #logo {
         max-height: 10vw;
         margin-left: 5vw;
     }
 }
 
 @media only screen and (max-width: 700px) {
-    #headerContainer h1{
+    #headerContainer h1 {
         font-size: 4vw;
     }
+
     #uiContainer {
         top: -7vw;
     }
 }
 
 @media only screen and (max-width: 450px) {
-    .backCard{
+    .backCard {
         min-height: 24vw;
         width: auto;
         min-width: 18vw;
@@ -287,15 +333,14 @@ header{
         max-width: 12vh;
     }
 
-    #logo{
+    #logo {
         max-height: 12vw;
     }
 
-    #headerContainer h1{
+    #headerContainer h1 {
         font-size: 6vw;
     }
 }
-
 
 
 /*
@@ -303,7 +348,7 @@ ANIMATIONS
 */
 
 .wobble {
-	animation: wobble 0.6s both;
+    animation: wobble 0.6s both;
 }
 
 @keyframes wobble {
@@ -327,4 +372,4 @@ ANIMATIONS
     75% {
         transform: translateX(-6px) rotate(-1.2deg);
     }
-  }
+}
