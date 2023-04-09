@@ -5,21 +5,31 @@ let matchesNeeded = 0; // number of matches needed to win the game
 let numberFlipped = 0;
 let gameMap = [];
 
-const START_TIME = 180;
-let currentTime = START_TIME;
+let START_TIME = 0;
+let currentTime;
 let timerInterval;
+let difficulty;
 
 let score = 0;
 let bonusScore = 15; // each wrong guess reduces this by 5, resets on guess
 let timeSinceLastGuess = 10; // each second passed reduces this by 1, resets on guess
 
 const ANIMATION_DURATION = 1400 // duration to flip card and to return from being flipped
-function makeGame(nrCol, nrLines) {
-    const console = document.getElementById('console');
+function makeGame(nrCol, nrLines, startTime) {
+    //const console = document.getElementById('console');
     if (nrCol % 2 === 1 && nrLines % 2 === 1) {
         alert("Uneven number of lines and columns!");
     }
     matchesNeeded = (nrCol * nrLines) / 2;
+    START_TIME = startTime;
+    currentTime = startTime;
+    if ( (startTime / matchesNeeded) > 10)
+        difficulty = 1;
+    else if ( (startTime / matchesNeeded)  > 7)
+        difficulty = 2;
+    else
+        difficulty = 3;
+
 
     // initializarea
     for (let i = 0; i < nrLines; i++)
@@ -192,6 +202,32 @@ function updateTimer() {
 }
 
 function App() {
+    makeGame(4, 4, 90);
+    // calculate the start time
+    let cifra1 = Math.floor(currentTime / 100);
+    let cifra2 = Math.floor(currentTime % 100 / 10);
+    let cifra3 = Math.floor(currentTime % 10);
+    if (cifra1 === 0)
+        cifra1 = "empty.png";
+    else
+        cifra1 = "nr" + cifra1 + ".png";
+
+    if (cifra2 === 0 && cifra1 === "empty.png")
+        cifra2 = "empty.png"
+    else
+        cifra2 = "nr" + cifra2 + ".png";
+
+    if (cifra3 === 0 && cifra2 === "empty.png" && cifra1 === "empty.png")
+        cifra3 = "empty.png";
+    else
+        cifra3 = "nr" + cifra3 + ".png";
+    // calculate difficulty
+    let level2 = "hidden";
+    let level3 = "hidden";
+    if (difficulty > 1)
+        level2 = "visible";
+    if (difficulty > 2)
+        level3 = "visible";
 
     const header = document.createElement('header')
     header.innerHTML = `
@@ -200,9 +236,9 @@ function App() {
     <div id="uiContainer">
         <div  id="timer">
             <img class="cifra" src="src/media/timer.png">
-            <img class="cifra" src="src/media/nr1.png">
-            <img class="cifra" src="src/media/nr8.png">
-            <img class="cifra" src="src/media/nr0.png">
+            <img class="cifra" src=${"src/media/" + cifra1}>
+            <img class="cifra" src=${"src/media/" + cifra2}>
+            <img class="cifra" src=${"src/media/" + cifra3}>
         </div>
         <div id="score">
             <h1>Score:</h1>
@@ -214,13 +250,13 @@ function App() {
         <div id="level">
             <h1>Level:</h1>
             <img class="cifra" src="src/media/levelHard.png">
-            <img class="cifra" src="src/media/levelHard.png">
-            <img class="cifra" src="src/media/levelHard.png">
+            <img class="cifra" src="src/media/levelHard.png" style="visibility: ${level2}">
+            <img class="cifra" src="src/media/levelHard.png" style="visibility: ${level3}">
         </div>
     </div>
   `;
 
-    makeGame(4, 4);
+
 
     // INTERACTIUNE 
     const cards = document.querySelectorAll(".card");
