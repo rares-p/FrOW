@@ -57,6 +57,8 @@ header {
     font-weight: bold;
     color: rgb(121, 167, 218);
     font-family: 'Fredoka', sans-serif;
+
+    cursor: pointer;
 }
 
 #menuButtons button:hover {
