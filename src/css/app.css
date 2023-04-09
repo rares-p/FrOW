@@ -24,15 +24,14 @@ header {
 #menuLogo{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #logoText {
-    margin-top: -15vh;
-    scale: 30%;
+    max-width: 25vw;
 }
 #logoImage{
-    margin-top: -68vh;
-    scale: 26%;
-    margin-bottom: -40vh;
+    max-width: 25vw;
 }
 
 #menuButtons {
