@@ -1,8 +1,8 @@
-
 body {
     font-family: Arial, serif;
     font-family: 'Fredoka', sans-serif;
     overflow: visible;
+    font-size: 1vw;
 }
 
 header{
@@ -71,14 +71,25 @@ header{
 }
 
 #slideShow{
-    background-color:rgb(31, 51, 71);
-    border: 2px solid black;
-    border-radius: 20px;
-    padding: 50px;
-    align-content: center;
+    background: transparent;
     position: relative;
-    min-width: 550px;
     align-self: center;
+    display: inline-block;
+    background-image: url("../media/decoration3.png");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    align-content: center;
+    background-position: 0%;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:row;
+    width: 22.5vw;
+    height: 23.4vw;
+    margin-top: 3%;
+
     /*left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);*/
@@ -91,27 +102,30 @@ header{
 }
 
 #container{
-    background-color: antiquewhite;
-    /*left: 10%;
-    position: relative;
-    flex: 25%;
-    width: 25%;
-    display: flex;
-    align-items: center;
-    right: 50%;
-    margin-bottom: 500px;
-    margin-left: 10%;
-    margin-right: 200px;*/
+    background-color: white;
+    border-radius: 2vw;
     align-self:center;
     flex-direction: column;
-    position:initial;
     display: flex;
     justify-content: center;
-    margin-top: 15%;
+    margin-top: 20vw;
     margin-bottom: 300px;
     width: 70%;
 }
 
+#containerTitle{
+    width: 30%;
+    float: left;
+}
+
+#containerTitle p{
+    margin: 5%;
+    background-color: #645be1;
+    padding: 0.5vw;
+    border-radius: 0.7vw;
+    font-size: 2rem;
+}
+/*
 #leftArrow{
     background-color: transparent;
     border: 0px;
@@ -120,30 +134,31 @@ header{
     position: relative;
     flex-direction: row;
     top: 50%;
-}
+}*/
 
 #fruitCard{
     width: 300px;
-    float: left;
-    min-width: 300px;
-    min-height: 300px;
+    display: block;
+    position: relative;
+    width: 11.25vw;
 }
 
 #leftArrow{
     background-color: transparent;
     border: 0px;
-    display:block;
+    /*display:block;
     float: left;
     left: 0;
     margin-top: 25%;
+    size-adjust: 2vw;*/
 }
 
 #rightArrow{
     background-color: transparent;
     border: 0px;
-    display: flexbox;
+    /*display: flexbox;
     float: left;
-    margin-top: 25%;
+    margin-top: 25%;*/
 }
 
 .paragraph{
@@ -152,4 +167,28 @@ header{
     display: block;
     left: 0;
     float: left;
+}
+
+.cardArrow{
+    width: 3vw;
+}
+
+#searchContainer{
+    font-size: 2rem;
+    width: 50%;
+    float: right;
+}
+
+#searchFruit{
+    border-radius: 0.5vw;
+    border: 0.1vw solid black;
+    background: transparent;
+}
+
+#searchFruit:hover{
+    background-color: #645be1;
+}
+
+#searchFruit img, input, label{
+    vertical-align:middle;
 }

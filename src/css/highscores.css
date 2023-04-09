@@ -27,20 +27,24 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: relative;
 }
 
 .highscoreUserName{
+    position: absolute;
     background-color: rgb(101,90,225);
     border-radius: 0 20px 20px 0;
     padding: 1vw;
     padding-right: 5vw;
     margin-right: 1vw;
     transform: translateX(-15px);
+    margin-left: 70%;
 }
 
 .decorationImg{
     max-width: 6vw;
     margin-left: 10px;
+    width: 15VW;
 }
 
 .highscore{
@@ -85,18 +89,18 @@
 .achievmentContainer{
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 10vw;
 }
 
 .decorationImgAchievment{
     position: absolute;
-    max-width: 10vw;
+    width: 10%;
 }
 
 .achievmentImg{
-    position: relative;
-    left: 2.5vw;
-    max-width: 5vw;
+    position: absolute;
+    max-width: 3vw;
 }
 
 .achievmentTxt{

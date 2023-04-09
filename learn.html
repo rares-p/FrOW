@@ -26,11 +26,22 @@
     </header>
     <div id="learnContainer">
         <div id="container">
-            <p style="right: 0;display: inline-block;">Click the arrows to learn more about fruits and vegetables!</p>
-            <div id="slideShow" style="display: inline-block;">
-                <button id="leftArrow" onclick="previousImage()"><img src="src/media/arrow2.png"/></button>
+            <div style="flex-direction: row;">
+                <div id="containerTitle">
+                    <p>Click the arrows to learn more about fruits and vegetables!</p>
+                </div>
+                <div id="searchContainer">
+                    <form onsubmit="" role="" style=" position: relative;float: right;margin: 2rem;">
+                        <label for="search">Search for stuff</label>
+                        <input id="" type="" placeholder="Search..." autofocus required />
+                        <button id="searchFruit" type="submit"><img src="src/media/search.png"></button>    
+                    </form>
+                </div>
+            </div>
+            <div id="slideShow">
+                <button id="leftArrow" onclick="previousImage()"><img class="cardArrow" src="src/media/arrow2.png"/></button>
                 <img src="src/media/FaceCard1.png" id="fruitCard">
-                <button id="rightArrow" onclick="nextImage()"><img src="src/media/arrow3.png"/></button>
+                <button id="rightArrow" onclick="nextImage()"><img class="cardArrow" src="src/media/arrow3.png"/></button>
             </div>
             <div class="paragraph">
                 <h3 id="fruitName">Lemon</h3>
