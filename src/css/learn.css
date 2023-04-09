@@ -268,3 +268,27 @@ header{
 #searchFruit img, input, label{
     vertical-align:middle;
 }
+
+
+
+@media only screen and (max-width: 700px) {
+    .paragraph p{
+        font-size: small;
+    }
+
+    .paragraph h3{
+        font-size: medium;
+    }
+
+    #searchContainer input[type=text] {
+        font-size: medium;
+    }
+
+    #upperContainer p{
+        font-size: small;
+    }
+
+    #container{
+        width: 90%;
+    }
+}

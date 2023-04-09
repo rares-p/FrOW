@@ -216,6 +216,58 @@ input[type=number]{
     }
 }
 
+@media only screen and (max-width: 700px) {
+    h1{
+        font-size: medium;
+    }
+
+    .decorationImg{
+        max-width: 15vw;
+    }
+
+    .highscore .highscoreUserName{
+        font-size: large;
+        transform: translateX(0px);
+    }
+
+    .highscore h1{
+        font-size: large;
+    }
+
+    .achievmentTxt{
+        font-size: large;
+        transform: translateX(0vw);
+    }
+
+    .decorationImgAchievment{
+        width: 20%;
+    }
+
+    .achievmentImg{
+        max-width: 10vw;
+    }
+
+    #pageText{
+        font-size: medium;
+    }
+
+    .buttonHighscoresPage{
+        width: 8vw;
+        height: 8vw;
+        font-size: small;
+    }
+
+    .gotoContainer label{
+        font-size: small;
+    }
+
+    input[type=number]{
+        width: 8vw;
+        height: 8vw;
+        font-size: small;
+    }
+}
+
 
 /*
 ANIMATIONS
