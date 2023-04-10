@@ -32,11 +32,11 @@ function makeGame(nrCol, nrLines, startTime) {
         averageMoves += 1/chanceForMatch;
     }
     averageTimeTakenToFinish = (averageMoves * 3) /START_TIME;
-    if ( averageTimeTakenToFinish < 0.4)
+    if ( averageTimeTakenToFinish < 0.45)
         difficulty = 1;
-    else if ( averageTimeTakenToFinish < 0.6)
+    else if ( averageTimeTakenToFinish < 0.65)
         difficulty = 2;
-    else if ( averageTimeTakenToFinish < 0.8 )
+    else if ( averageTimeTakenToFinish < 0.85)
         difficulty = 3;
     else
         difficulty = 4;
@@ -112,7 +112,11 @@ function checkForMatch() {
         bonusScore = 15;
         matchesNeeded --;
         if (matchesNeeded === 0)
-            setTimeout(()=>alert("Won game!"), 1000);
+            setTimeout(()=> {
+                alert("Won game!");
+                location.replace("index.html");
+                }, 1000);
+
     } else {
         if (bonusScore > 0)
             bonusScore -= 5;
