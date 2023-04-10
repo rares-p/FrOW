@@ -33,7 +33,9 @@
                 </div>
                 <div id="searchContainer">
                     <form onsubmit="" role="">
-                        <input id="searchBar" type="text" placeholder="Search..." autofocus required />
+                        <input id="searchBar" type="text" onkeyup="updateSearch(this.value)" placeholder="Search..." list="fruitOptions" autocomplete="off" autofocus required />
+                        <datalist id="fruitOptions">
+                        </datalist>
                         <button id="searchFruit" type="submit"><img id="searchFruitImg" src="src/media/search.png"></button>    
                     </form>
                 </div>
