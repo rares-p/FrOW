@@ -24,12 +24,22 @@ function makeGame(nrCol, nrLines, startTime) {
     matchesNeeded = (nrCol * nrLines) / 2;
     START_TIME = startTime;
     currentTime = startTime;
-    if ( (startTime / matchesNeeded) > 10)
+    // calculate the difficulty
+    let averageMoves = 1;
+    let averageTimeTakenToFinish;
+    for(let i = 0;i<matchesNeeded - 1;i++){
+        let chanceForMatch = (1 + (2*(matchesNeeded - i - 1))/17) / ((matchesNeeded - i)*2 - 1);
+        averageMoves += 1/chanceForMatch;
+    }
+    averageTimeTakenToFinish = (averageMoves * 3) /START_TIME;
+    if ( averageTimeTakenToFinish < 0.4)
         difficulty = 1;
-    else if ( (startTime / matchesNeeded)  > 7)
+    else if ( averageTimeTakenToFinish < 0.6)
         difficulty = 2;
-    else
+    else if ( averageTimeTakenToFinish < 0.8 )
         difficulty = 3;
+    else
+        difficulty = 4;
 
 
     // initializarea
@@ -157,8 +167,13 @@ function addScore(value) {
 function startTimer() {
     timerInterval = setInterval(function () {
         updateTimer();
-        if (currentTime === 0 || matchesNeeded === 0)
+        if (currentTime === 0 ) {
             clearInterval(timerInterval);
+            alert("You lost!");
+            location.replace("./index.html");
+        }
+        else if (matchesNeeded === 0)
+            clearInterval(timerInterval)
     }, 1000);
 }
 
@@ -206,7 +221,6 @@ function App() {
     const ROWS = sessionStorage.getItem("rows");
     const COLS = sessionStorage.getItem("cols");
     const TIME = sessionStorage.getItem("time");
-    console.log(ROWS + " " + COLS + " " + TIME + " " + typeof ROWS);
     makeGame(COLS, ROWS, TIME);
     // calculate the start time
     let cifra1 = Math.floor(currentTime / 100);
@@ -229,10 +243,13 @@ function App() {
     // calculate difficulty
     let level2 = "hidden";
     let level3 = "hidden";
+    let level4 = "hidden";
     if (difficulty > 1)
         level2 = "visible";
     if (difficulty > 2)
         level3 = "visible";
+    if (difficulty > 3)
+        level4 = "visible";
 
     const header = document.createElement('header')
     header.innerHTML = `
@@ -257,6 +274,7 @@ function App() {
             <img class="cifra" src="src/media/levelHard.png">
             <img class="cifra" src="src/media/levelHard.png" style="visibility: ${level2}">
             <img class="cifra" src="src/media/levelHard.png" style="visibility: ${level3}">
+            <img class="cifra" src="src/media/levelHard.png" style="visibility: ${level4}">
         </div>
     </div>
   `;

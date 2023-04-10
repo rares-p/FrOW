@@ -219,7 +219,8 @@ header {
 
 .cifra {
     max-height: 7vh;
-    margin: 0px;
+    margin-left: 0.01vw;
+    margin-right: 0.01vw;
 }
 
 #timer img:nth-of-type(3) {
