@@ -3,7 +3,7 @@ import Button from "./Button.js";
 const Header = () => {
     return `
     <header id="headerContainer">
-        <input type="image" id="logo" src="../src/media/logo.png" onclick="location.replace('./index.html')">
+        <a href='./index.html'><img id="logo" src="../src/media/logo.png"></a>
         <h1>Fruits on the web</h1>
         ${Button()}
     </header>

@@ -111,7 +111,6 @@ function AppHighscores() {
     const header = document.createElement('header')
     header.innerHTML = `
     ${Header()}
-    <img id="bar" src="src/media/bar.png">
   `;
 
   let user1 = {

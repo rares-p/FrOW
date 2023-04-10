@@ -3,7 +3,7 @@ function startGame(rows, cols, time){
         alert("Uneven number of cards!");
         return;
     }
-    location.replace("./game.html");
+    window.location.href = "./game.html";
     sessionStorage.setItem("rows", rows);
     sessionStorage.setItem("cols", cols);
     sessionStorage.setItem("time", time);
