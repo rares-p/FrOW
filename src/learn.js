@@ -1,6 +1,14 @@
 let index = 1;
 const noCards = 16;
-updateDescription();
+var fruitNames = [];
+
+setup();
+
+async function setup()
+{
+    await populateFruitNames();
+    updateDescription();
+}
 
 function updateDescription(){
     fetch(location.protocol + "//" + location.host + "/src/data/about.json")
@@ -10,6 +18,16 @@ function updateDescription(){
         document.getElementById("fruitName").innerText = json.fruits[index - 1].name;
         document.getElementById("description").innerText = json.fruits[index - 1].paragraph;
         document.getElementById("vitamins").innerText = json.fruits[index - 1].vitamins;
+    });
+}
+
+function populateFruitNames()
+{
+    fetch(location.protocol + "//" + location.host + "/src/data/about.json")
+    .then(response => response.json())
+    .then(json => {
+        for(let i = 0; i < noCards; i ++)
+            fruitNames[i] = json.fruits[i].name.toLowerCase();
     });
 }
 
@@ -33,4 +51,21 @@ function previousImage()
     let img = document.getElementById("fruitCard");
     img.src = "src/media/FaceCard" + index + ".png";
     updateDescription();
+}
+
+function updateSearch(text)
+{
+    document.getElementById("fruitOptions").innerHTML = '';
+    if(text == "")
+        return;
+    let options = [];
+    fruitNames.forEach(fruit => {
+        if(fruit.startsWith(text))
+            options.push(fruit);
+    });
+    console.log("optiuni " + options);
+    document.getElementById("searchBar").style.display = options[0];
+    options.forEach(fruit => {
+        document.getElementById("fruitOptions").innerHTML += '<option>' + fruit + '</option>';
+    });
 }
