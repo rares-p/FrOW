@@ -20,3 +20,7 @@ function highscores(){
 function difficultyMenu(){
     location.replace("./difficultyPage.html");
 }
+
+function about(){
+    location.replace("./about.html")
+}
