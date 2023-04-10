@@ -10,17 +10,18 @@ function startGame(rows, cols, time){
 }
 
 function learn(){
-    location.replace("./learn.html");
+    window.location.href = "./learn.html";
 }
 
 function highscores(){
-    location.replace("./highscores.html")
+    window.location.href = "./highscores.html";
 }
 
 function difficultyMenu(){
-    location.replace("./difficultyPage.html");
+    window.location.href = "./difficultyPage.html";
 }
 
 function about(){
+    window.location.href = "./about.html";
     location.replace("./about.html")
 }
