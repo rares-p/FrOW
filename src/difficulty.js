@@ -1,3 +1,5 @@
+import Header from "./components/Header.js";
+
 let rowSlider = document.getElementById("rowRange");
 const colSlider = document.getElementById("colRange");
 const timeSlider = document.getElementById("timeRange");
@@ -20,3 +22,10 @@ timeSlider.oninput = function () {
         extraZero = "0"
     timeValue.innerHTML = "Time: " + minutes + ":" + extraZero + seconds;
 }
+
+const header = document.createElement('header')
+header.innerHTML = `
+    ${Header()}
+    `
+
+document.getElementById("difficultyHeader").appendChild(header.cloneNode(true))

@@ -7,6 +7,8 @@ const Header = () => {
         <h1>Fruits on the web</h1>
         ${Button()}
     </header>
+    <img id="bar" src="src/media/bar.png">
+    
     `;
 }
 

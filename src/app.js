@@ -258,7 +258,6 @@ function App() {
     const header = document.createElement('header')
     header.innerHTML = `
     ${Header()}
-    <img id="bar" src="src/media/bar.png">
     <div id="uiContainer">
         <div  id="timer">
             <img class="cifra" src="src/media/timer.png">

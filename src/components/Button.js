@@ -1,7 +1,7 @@
 
 function Button() {
     return `
-        <button onclick={location.replace("./menu.html")}>
+        <button onclick={location.replace("./index.html")}>
             &#9776;
         </button>
 

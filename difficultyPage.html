@@ -13,11 +13,12 @@
 <noscript>Please enable javascript for this app to work.</noscript>
 
 <img class="backgroundImage" src="src/media/background.png">
+<div id="difficultyHeader"></div>
 <div id="difficultyPage">
     <div id="sliders">
         <div id="rowSlider">
-            <h1 id="rowValue">Rows: 3</h1>
-            <input type="range" min="2" max="10" value="3" class="slider" id="rowRange">
+            <h1 id="rowValue">Rows: 2</h1>
+            <input type="range" min="2" max="10" value="2" class="slider" id="rowRange">
         </div>
         <div id="colSlider">
             <h1 id="colValue">Columns: 3</h1>
@@ -35,7 +36,7 @@
         </button>
     </div>
 </div>
-<script src="src/difficulty.js"></script>
+<script src="src/difficulty.js" type="module"></script>
 <script src="src/transitions.js"></script>
 </body>
 </html>
