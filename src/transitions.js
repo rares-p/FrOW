@@ -23,5 +23,4 @@ function difficultyMenu(){
 
 function about(){
     window.location.href = "./about.html";
-    location.replace("./about.html")
 }
