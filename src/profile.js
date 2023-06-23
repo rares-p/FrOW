@@ -1,3 +1,5 @@
+import GameData from './components/GameData.js'
+
 const baseURL = "http://192.168.1.137:5000"
 
 let difficulty = 0;
@@ -29,18 +31,19 @@ function changeStats(difficulty, averageTime, averageBoardSize, gamesPlayed, ave
 
 function changeAttempts(startdate, timetaken, maxtime, columns, rows, score, index)
 {
-    document.getElementById("difficultyStats").innerHTML += `<h2>NR: ${index}</h2><div>\
-    Start Date: ${startdate}\
-    \
-    Time taken: ${timetaken}\
-    \
-    Max Time: ${maxtime}\
-    \
-    Columns: ${columns}\
-    \
-    Rows: ${rows}\
-    \
-    Score: ${score}</div>`;
+    document.getElementById("difficultyStats").innerHTML += GameData();
+    //document.getElementById("difficultyStats").innerHTML += `<h2>NR: ${index}</h2><div>\
+    //Start Date: ${startdate}\
+    //\
+    //Time taken: ${timetaken}\
+    //\
+    //Max Time: ${maxtime}\
+    //\
+    //Columns: ${columns}\
+    //\
+    //Rows: ${rows}\
+    //\
+    //Score: ${score}</div>`;
 }
 
 async function changeDifficulty()
