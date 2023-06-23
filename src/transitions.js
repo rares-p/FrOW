@@ -24,3 +24,32 @@ function difficultyMenu(){
 function about(){
     window.location.href = "./about.html";
 }
+
+function login(){
+    window.location.href = "./login.html";
+}
+
+function profile(){
+    window.location.href = "./profile.html";
+}
+
+let startButton = document.getElementById("startButton");
+
+console.log(document.getElementById("startButton"));
+
+if(sessionStorage.getItem("username") == null)
+{
+    startButton.onclick = login;
+    startButton.innerText = "LOGIN";
+}
+else
+{
+    document.getElementById("menuButtons").innerHTML += '\
+    <div class="containerButton">\
+        <button id="aboutButton" onclick="profile()">\
+            PROFILE\
+        </button>\
+        <img id="aboutImage" class="buttonImg" src="src/media/logo.png">\
+        \
+    </div>';
+}

@@ -1,5 +1,6 @@
 import Header from './components/Header.js'
 import Card from './components/Card.js'
+import { Utils } from './dbutils.js';
 
 let matchesNeeded = 0; // number of matches needed to win the game
 let numberFlipped = 0;
@@ -16,11 +17,20 @@ let timeSinceLastGuess = 10; // each second passed reduces this by 1, resets on 
 
 const ANIMATION_DURATION = 1400 // duration to flip card and to return from being flipped
 
+const startDate = new Date();
+let nrColumns;
+let nrRows;
+console.log(startDate);
+
 function makeGame(nrCol, nrLines, startTime) {
     //const console = document.getElementById('console');
     if (nrCol % 2 === 1 && nrLines % 2 === 1) {
         alert("Uneven number of lines and columns!");
     }
+
+    nrColumns = nrCol;
+    nrRows = nrLines;
+
     matchesNeeded = (nrCol * nrLines) / 2;
     START_TIME = startTime;
     currentTime = startTime;
@@ -114,7 +124,8 @@ function checkForMatch() {
         if (matchesNeeded === 0)
             setTimeout(()=> {
                 alert("Won game!");
-                location.replace("index.html");
+                Utils.addNewAttempt(startDate, START_TIME, START_TIME - currentTime, nrColumns, nrRows, score, difficulty, sessionStorage.getItem('username'));
+                //location.replace("index.html");
                 }, 1000);
 
     } else {
