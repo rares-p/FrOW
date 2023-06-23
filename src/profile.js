@@ -1,5 +1,7 @@
 //document.getElementById("formContainer").innerHTML += 
-const baseURL = "http://10.20.0.31:5000";
+import dotenv from "dotenv";
+dotenv.config();
+const baseURL = process.env.BASE_URL;
 
 let difficulty = 0;
 async function getStatatisticsForDifficulty(difficulty)

@@ -1,4 +1,6 @@
-const baseURL = "http://10.20.0.31:5000";
+import dotenv from "dotenv";
+dotenv.config();
+const baseURL = process.env.BASE_URL;
 
 async function addNewAttempt(startDate, maxTime, timeTaken, columns, rows,
      score, difficulty, username)
