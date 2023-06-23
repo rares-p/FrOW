@@ -165,3 +165,112 @@ header{
 
     cursor: pointer;
 }
+
+#profileContainer{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameDataContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border-radius: 2rem;
+    background-color: white;
+
+    width: fit-content;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    filter: drop-shadow(-10px 10px 20px #090934);
+
+    margin-bottom: 1rem;
+
+}
+
+.highscoreDecorationContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.decorationImg{
+    width: 4rem;
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    background-color: rgb(101,90,225);
+    margin-left: 1rem;
+    border-radius: 2rem;
+    align-items: center;
+}
+
+.infoText{
+    color: white;
+    font-size: large;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.indexGameData{
+    position: absolute;
+    color: white
+}
+
+.infoImg{
+    width: 2.5rem;
+}
+
+#msgContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-bottom: 2rem;
+    transform: translateX(-2rem);
+
+    filter: drop-shadow(-10px 10px 20px #090934);
+}
+
+#msgContainerSmaller{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(101,90,225);
+    border-radius: 2rem;
+
+    padding: 0.5rem;
+    padding-left: 3rem;
+}
+
+.msgTxt{
+    font-size: large;
+    color: white;
+}
+
+#txtMsgContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#msgBeginImg{
+    height: 7rem;
+    transform: translateX(4rem);
+    filter: drop-shadow(-5px 5px 20px #090934);
+}
+#msgEndImg{
+    height: 7rem;
+}
