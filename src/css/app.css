@@ -40,6 +40,9 @@ header {
     justify-content: center;
 }
 
+#menuButtons {
+    padding-bottom: 4vh;
+}
 
 #menuButtons button {
     transform: translateX(2vw);

@@ -33,10 +33,10 @@
                 </div>
                 <div id="searchContainer">
                     <form onsubmit="" role="">
-                        <input id="searchBar" type="text" onkeyup="updateSearch(this.value)" placeholder="Search..." list="fruitOptions" autocomplete="off" autofocus required />
+                        <input id="searchBar" type="text" onkeyup="updateSearch(this.value)" onsubmit="searchFruit()" placeholder="Search..." list="fruitOptions" autocomplete="off" autofocus required />
                         <datalist id="fruitOptions">
                         </datalist>
-                        <button id="searchFruit" type="submit"><img id="searchFruitImg" src="src/media/search.png"></button>    
+                        <button id="searchFruit" onclick="searchFruitOnSubmit()"><img id="searchFruitImg" src="src/media/search.png"></button>    
                     </form>
                 </div>
             </div>
