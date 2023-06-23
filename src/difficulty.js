@@ -29,3 +29,16 @@ header.innerHTML = `
     `
 
 document.getElementById("difficultyHeader").appendChild(header.cloneNode(true))
+
+function startGame(rows, cols, time){
+    if ((rows * cols) % 2 === 1){
+        alert("Uneven number of cards!");
+        return;
+    }
+    window.location.href = "./game.html";
+    sessionStorage.setItem("rows", rows);
+    sessionStorage.setItem("cols", cols);
+    sessionStorage.setItem("time", time);
+}
+
+window.startGame = startGame;

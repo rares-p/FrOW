@@ -124,7 +124,7 @@ function checkForMatch() {
         if (matchesNeeded === 0)
             setTimeout(()=> {
                 alert("Won game!");
-                Utils.addNewAttempt(startDate, START_TIME, START_TIME - currentTime, nrColumns, nrRows, score, difficulty, sessionStorage.getItem('username'));
+                Utils.addNewAttempt(startDate, START_TIME, START_TIME - currentTime, nrColumns, nrRows, score, difficulty);
                 //location.replace("index.html");
                 }, 1000);
 

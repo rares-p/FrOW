@@ -3,13 +3,13 @@ const baseURL = "http://192.168.1.137:5000"
 let difficulty = 0;
 async function getStatatisticsForDifficulty(difficulty)
 {
-    const username = sessionStorage.getItem("username");
-    const data = {username, difficulty};
+    const data = {difficulty};
 
     const response = await fetch(baseURL + "/getAverage", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            "Authorization": localStorage.getItem("token"),
         },
         body: JSON.stringify(data)
     });
@@ -62,18 +62,16 @@ changeDifficulty(), 1000);
 
 async function getAllAttempts(difficulty)
 {
-    const username = sessionStorage.getItem("username");
-    const data = {username, difficulty};
+    const data = {difficulty};
 
     const response = await fetch(baseURL + "/getAttempt", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            "Authorization": localStorage.getItem("token"),
         },
         body: JSON.stringify(data)
     });
     console.log("raspuns la average stats: " + response);
     return response.json();
 }
-
-
