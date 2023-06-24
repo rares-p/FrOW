@@ -19,7 +19,7 @@ function login(){
 }
 
 function profile(){
-    window.location.href = "./profile.html";
+    window.location.href = "./profile2.html";
 }
 
 let startButton = document.getElementById("startButton");

@@ -123,7 +123,10 @@ function checkForMatch() {
         matchesNeeded --;
         if (matchesNeeded === 0)
             setTimeout(()=> {
-                alert("Won game!");
+                let endGame = document.getElementById("endGame");
+                endGame.children[0].children[1].textContent="YOU WON!!😎";
+                endGame.style.display = "flex";
+                //alert("Won game!");
                 Utils.addNewAttempt(startDate, START_TIME, START_TIME - currentTime, nrColumns, nrRows, score, difficulty);
                 //location.replace("index.html");
                 }, 1000);
@@ -184,8 +187,12 @@ function startTimer() {
         updateTimer();
         if (currentTime === 0 ) {
             clearInterval(timerInterval);
-            alert("You lost!");
-            location.replace("./index.html");
+            
+            let endGame = document.getElementById("endGame");
+            endGame.children[0].children[1].textContent="YOU LOST...😨";
+            endGame.style.display = "flex";
+            //alert("You lost!");
+            //location.replace("./index.html");
         }
         else if (matchesNeeded === 0)
             clearInterval(timerInterval)
@@ -290,6 +297,14 @@ function App() {
             <img class="cifra" src="src/media/levelHard.png" style="visibility: ${level3}">
             <img class="cifra" src="src/media/levelHard.png" style="visibility: ${level4}">
         </div>
+    </div>
+
+    <div id="endGame">
+        <div id="cloudContainer">
+            <img id="cloud" src="src/media/cloud.png">
+            <h1 id="endText">YOU WON!😎</h1>
+        </div>
+        <button onClick="location.replace('./difficultyPage.html')" id="playAgain">PLAY AGAIN</button>
     </div>
   `;
 
