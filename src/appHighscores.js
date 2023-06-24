@@ -4,6 +4,7 @@ import HighscoreButtons from './components/HighscoreButtons.js';
 
 let currentPage = 1;
 let nrPages = 45;
+const baseURL = "http://192.168.1.137:5000";
 
 function makeHighscores(nrUsers, listOfUsers, nrPages, startPage)
 {
@@ -24,7 +25,7 @@ function makeHighscores(nrUsers, listOfUsers, nrPages, startPage)
         <div class="highscoresContainer">
     `;
 
-    for (var i = 0; i < nrUsers; i++)
+    for (var i = 0; i < listOfUsers.length; i++)
     {
         highScoresHtml += Highscore(listOfUsers[i].indexUser, listOfUsers[i].userName, listOfUsers[i].userScore);
     }
@@ -48,8 +49,9 @@ function makeHighscores(nrUsers, listOfUsers, nrPages, startPage)
     document.body.appendChild(highScoresElement);
 }
 
-function changePage(button)
+async function changePage(button)
 {
+    console.log("ajunge");
     let user1 = {
         indexUser: 1,
         userName: "UserRandom",
@@ -88,6 +90,8 @@ function changePage(button)
     }
 
     currentPage = newValue;
+    listOfUsers = await getHighscoresPage(currentPage);
+    console.log(listOfUsers);
     makeHighscores(5, listOfUsers, nrPages, currentPage);
 
 
@@ -122,24 +126,55 @@ function AppHighscores() {
     for (var i = 0; i < 5; i++)
         listOfUsers[i] = user1;
 
-    makeHighscores(5, listOfUsers, nrPages, currentPage);
+    getHighscoresPage(currentPage).then(
+        listOfUsers => {
+            makeHighscores(5, listOfUsers, nrPages, currentPage);
 
-    var buttons = document.getElementsByTagName('button');
-    for (var i = 0; i < buttons.length; i++)
-    {
-        let button = buttons[i];
-        button.addEventListener("click", function () {
-            button.classList.add("jello");
-
-            setTimeout(() => {
-                button.classList.remove("jello");
-                changePage(button);
-            }, 900);
+            var buttons = document.getElementsByTagName('button');
+            for (var i = 0; i < buttons.length; i++)
+            {
+                let button = buttons[i];
+                button.addEventListener("click", function () {
+                    button.classList.add("jello");
+        
+                    setTimeout(() => {
+                        button.classList.remove("jello");
+                        changePage(button);
+                    }, 900);
+                });
+            }        
         });
-    }
     
 
     return header.cloneNode(true);
 }
+
+async function getHighscoresPage(page)
+{
+    const response = await fetch(baseURL + `/highscores?page=${page}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+        }
+    });
+
+    const responseJson = await response.json();
+    console.log(responseJson);
+    let users = [];
+    for(let i = 0; i < responseJson.length; i ++)
+    {
+        users[i] = {
+            indexUser: (page - 1) * 5 + 1 + i,
+            userName: responseJson[i].username,
+            userScore: responseJson[i].highscore
+        }
+    }
+    return users;
+}
+
+// setTimeout( async () => {
+//     makeHighscores(5, await getHighscoresPage(1), nrPages, 1)
+// }, 50); 
 
 export default AppHighscores;
