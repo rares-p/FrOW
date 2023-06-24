@@ -58,6 +58,7 @@ function generateLogoutButton()
     <button id="logoutButton" onclick='(function(){ 
              localStorage.removeItem("username");
              localStorage.removeItem("token");
+             localStorage.removeItem("admin");
              location.reload(); })();'>
         LOGOUT
     </button>
