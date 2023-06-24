@@ -222,3 +222,36 @@ body {
 #msgEndImg{
     height: 7rem;
 }
+
+#msgContainer button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#msgContainer button>img{
+    height: 4rem;
+}
+
+#changeDifficultyButtonLeft{
+    transform: translateX(5rem);
+    margin-right: 1rem;
+}
+#changeDifficultyButtonLeft:hover{
+    transform: translateX(5rem) scale(1.15);
+}
+
+#changeDifficultyButtonRight{
+    margin-left: 1rem;
+}
+#changeDifficultyButtonRight:hover{
+    transform: scale(1.15);
+}

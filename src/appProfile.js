@@ -7,14 +7,21 @@ function changeStats(difficulty, averageTime, averageBoardSize, gamesPlayed, ave
 {
     const msgContainerElem = document.getElementById("txtMsgContainer");
     console.log(msgContainerElem.childNodes[2]);
-    msgContainerElem.childNodes[1].textContent = `WOW !! You played ${gamesPlayed} games of difficulty ${difficulty} `;
-    msgContainerElem.childNodes[5].textContent = `You were really fast: ${averageTime.toString().substring(0,4)}% !!! Your average board size was ${averageBoardSize} and your score ${averageScore}!!! 😲`;
+    if (gamesPlayed !== 0) {
+        msgContainerElem.childNodes[1].textContent = `WOW !! You played ${gamesPlayed} games of difficulty ${difficulty} `;
+        msgContainerElem.childNodes[5].textContent = `You were really fast: ${averageTime.toString().substring(0,4)}% !!! Your average board size was ${averageBoardSize} and your score ${averageScore}!!! 😲`;
+    }
+    else {
+        msgContainerElem.childNodes[1].textContent = `You haven't played any games of difficulty ${difficulty} `;
+        msgContainerElem.childNodes[3].textContent = `But you still got time! Go on and play!! 💪`;
+        msgContainerElem.childNodes[5].textContent = ``;
+    }
 }
 
 let difficulty = 0;
 async function getStatatisticsForDifficulty(difficulty)
 {
-    const response = await fetch(baseURL + `/attempt/average?difficulty=${difficulty}`, {
+    const response = await fetch(baseURL + `/average?difficulty=${difficulty}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -52,6 +59,7 @@ function makeAttempts(attempts)
 
     profileContainerHtml += `
     <div id="msgContainer">
+        <button id="changeDifficultyButtonLeft"><img class="difArrow" src="src/media/arrow2.png"></button>
         <img id = "msgBeginImg" src="src/media/msgBegin.png">
         <div id="msgContainerSmaller">
             <div id = "txtMsgContainer">
@@ -61,6 +69,7 @@ function makeAttempts(attempts)
             </div>
             <img id = "msgEndImg" src="src/media/msgEnd.png">
         </div>
+        <button id="changeDifficultyButtonRight"><img class="difArrow" src="src/media/arrow3.png"></button>
     </div>
     `;
 
@@ -72,14 +81,23 @@ function makeAttempts(attempts)
     
 
     profileContainer.innerHTML = profileContainerHtml;
+
     document.body.appendChild(profileContainer);
+
+    let buttonLeftElem = document.getElementById("changeDifficultyButtonLeft");
+    buttonLeftElem.addEventListener("click", () => {changeDifficulty(-1)});
+
+    let buttonRightElem = document.getElementById("changeDifficultyButtonRight");
+    buttonRightElem.addEventListener("click", () => {changeDifficulty(1)});
 }
 
-async function changeDifficulty()
+async function changeDifficulty(howMuch)
 {
-    difficulty ++;
+    difficulty += howMuch;
     if(difficulty == 5)
         difficulty = 1;
+    if (difficulty == 0)
+        difficulty = 4;
     const values = await getStatatisticsForDifficulty(difficulty);
     console.log(values);
     
@@ -90,8 +108,9 @@ async function changeDifficulty()
     changeStats(difficulty, values.averagetime, values.averageboardsize, values.gamesplayed, values.averagescore);
 
 }
+
 setTimeout(() =>
-changeDifficulty(), 1000);
+changeDifficulty(1), 100);
 
 function AppProfile() {
 
