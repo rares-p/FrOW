@@ -12,8 +12,6 @@ async function login(username, password)
         body: JSON.stringify(data)
     });
 
-    console.log("inainte de parsare");
-
     const jsonResponse = await response.json();
     if(response.status !== 200)
     {
@@ -27,6 +25,9 @@ async function login(username, password)
         alert("Login failed");
         return;
     }
+
+    if(jsonResponse.isAdmin === true)
+        localStorage.setItem("admin", true);
 
     console.log(response.status);
     console.log("tokenul:" + jsonResponse.token);

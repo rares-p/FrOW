@@ -68,4 +68,24 @@ function generateLogoutButton()
     });
 }
 
+function generateAdminButton()
+{
+    const menuButtonsDiv = document.getElementById("menuButtons");
+    if(!("admin" in localStorage))
+        return;
+
+    menuButtonsDiv.innerHTML += '\
+    <div class="containerButton">\
+    <button id="logoutButton">\
+        ADMIN PAGE\
+    </button>\
+    <img id="startImage" class="buttonImg" src="src/media/logo.png">\
+    </div>';
+    
+    menuButtonsDiv.lastChild.addEventListener("click", () => {
+        window.location.href = "./admin.html";
+    });
+}
+
 generateLogoutButton();
+generateAdminButton();
