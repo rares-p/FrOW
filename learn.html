@@ -25,7 +25,7 @@
                 <div id="searchContainer">
                     <form onsubmit="searchFruitOnSubmit(searchBar.value);return false" role="">
                         <input id="searchBar" type="text" onkeyup="updateSearch(this.value)" placeholder="Search..." list="fruitOptions" autocomplete="off" autofocus required />
-                        <datalist id="fruitOptions" style="background-color: ;">
+                        <datalist id="fruitOptions">
                         </datalist>
                         <button id="searchFruit" type="button" onclick="searchFruitOnSubmit(searchBar.value)"><img id="searchFruitImg" src="src/media/search.png"></button>    
                     </form>
