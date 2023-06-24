@@ -36,7 +36,7 @@ function makeUserList(userList)
         button.addEventListener("click", function () {
             let parElement = button.parentElement;
             let userName = parElement.children[0].textContent;
-            console.log(userName);
+            console.log("apelez delete [" + userName + "]");
             deleteUser(userName);
         });
     }
@@ -55,7 +55,7 @@ function makeUserList(userList)
 
 async function deleteUser(username)
 {
-    const response = await fetch(baseURL + `/attempt?username=${username}`, {
+    const response = await fetch(baseURL + `/users?username=${username.trim()}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
