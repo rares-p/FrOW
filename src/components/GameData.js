@@ -1,16 +1,15 @@
 
 
-function GameData() {
-    let data = "22-06-2023";
-    let time = "8 sec / 90 sec";
-    let board = "3 Col x 2 Rows";
-    let score = "113";
+function GameData(startdate, timetaken, maxtime, columns, rows, score, index) {
+    let data = startdate.substring(0, startdate.indexOf("T"));
+    let time = timetaken + " sec / " + maxtime + " sec";
+    let board = columns + " Col x " + rows + " Rows";
 
     return `
     <div class='gameDataContainer'>
         <div class = "highscoreDecorationContainer" >
             <img class = "decorationImg" src="src/media/decoration2.png">
-            <h1 class = "indexGameData"> ${1}</h1>
+            <h1 class = "indexGameData"> ${index+1}</h1>
         </div>
         <div class = "infoContainer" >
             <img class = "infoImg" src="src/media/calendarSmall.png">

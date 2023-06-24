@@ -28,12 +28,13 @@
         <div id="container">
             <div id="formContainer">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username"><br><br>
+                <input type="text" id="username" name="username"><br>
                 <label for="password">Password:</label>
                 <input type="text" id="password" name="password"><br><br>
                 <div id="submitButton">
                     <button onclick="login(document.getElementById('username').value, document.getElementById('password').value)">Login!</button>
                 </div>
+                <div id="dontHaveTxt">Don't have an account?</div>
                 <button id="switchLoginRegister" onclick="switchToRegister()">Go to register</button>
             </div>
         </div>
