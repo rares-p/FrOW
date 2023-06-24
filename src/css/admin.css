@@ -10,6 +10,7 @@ body{
     display: flex;
     align-items: center;
     flex-direction: row;
+    justify-content: flex-end;
 
     background-color: white;
     border-radius: 2rem;
@@ -24,6 +25,8 @@ body{
 .userAdmin{
     font-size: large;
     color: rgb(121, 167, 218);
+
+    width: 8rem;
 }
 
 .deleteUserButton{
