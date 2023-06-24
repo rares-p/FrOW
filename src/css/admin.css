@@ -28,7 +28,7 @@ body{
 
 .deleteUserButton{
     padding: 0.5rem;
-    background-color: rgb(101,90,225);
+    background-color: tomato;
     margin-left: 1rem;
     border-radius: 2rem;
 
@@ -45,5 +45,27 @@ body{
 }
 
 .deleteUserButton:hover{
+    transform: scale(1.05);
+}
+
+.makeAdminButton{
+    padding: 0.5rem;
+    background-color: rgb(101,90,225);
+    margin-left: 1rem;
+    border-radius: 2rem;
+
+    font-family: 'Fredoka', sans-serif;
+    color: white;
+    font-size: medium;
+
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.makeAdminButton:hover{
     transform: scale(1.05);
 }
