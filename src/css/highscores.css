@@ -37,8 +37,8 @@
     padding: 1vw;
     padding-right: 5vw;
     margin-right: 1vw;
-    transform: translateX(-15px);
     margin-left: 70%;
+    width: max-content;
 }
 
 .decorationImg{
@@ -204,6 +204,10 @@ input[type=number]{
     text-align: center;
 
     margin-left: 1vw;
+}
+
+.txtHighscoreScore{
+    position: relative;
 }
 
 
