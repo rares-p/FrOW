@@ -9,7 +9,7 @@ function changeStats(difficulty, averageTime, averageBoardSize, gamesPlayed, ave
     console.log(msgContainerElem.childNodes[2]);
     if (gamesPlayed !== 0) {
         msgContainerElem.childNodes[1].textContent = `WOW !! You played ${gamesPlayed} games of difficulty ${difficulty} `;
-        msgContainerElem.childNodes[5].textContent = `You were really fast: ${averageTime.toString().substring(0,4)}% !!! Your average board size was ${averageBoardSize} and your score ${averageScore}!!! 😲`;
+        msgContainerElem.childNodes[5].textContent = `You were really fast: ${averageTime.toFixed(2)}% !!! Your average board size was ${averageBoardSize.toFixed(2)} and your score ${averageScore.toFixed(2)}!!! 😲`;
     }
     else {
         msgContainerElem.childNodes[1].textContent = `You haven't played any games of difficulty ${difficulty} `;

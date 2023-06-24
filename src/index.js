@@ -15,7 +15,7 @@ function about(){
 }
 
 function login(){
-    window.location.href = "./login.html";
+    window.location.href = './login.html';
 }
 
 function profile(){
@@ -28,7 +28,7 @@ console.log(document.getElementById("startButton"));
 
 if(localStorage.getItem("username") == null)
 {
-    startButton.onclick = login;
+    startButton.setAttribute("onclick", "login()");
     startButton.innerText = "LOGIN";
 }
 else
@@ -53,19 +53,22 @@ function generateLogoutButton()
     
     console.log("exista existenta");
 
-    menuButtonsDiv.innerHTML += '\
-    <div class="containerButton">\
-    <button id="logoutButton">\
-        LOGOUT\
-    </button>\
-    <img id="startImage" class="buttonImg" src="src/media/logo.png">\
-    </div>';
+    menuButtonsDiv.innerHTML += `
+    <div class="containerButton">
+    <button id="logoutButton" onclick='(function(){ 
+             localStorage.removeItem("username");
+             localStorage.removeItem("token");
+             location.reload(); })();'>
+        LOGOUT
+    </button>
+    <img id="startImage" class="buttonImg" src="src/media/logo.png">
+    </div>`;
     
-    menuButtonsDiv.lastChild.addEventListener("click", () => {
-        localStorage.removeItem(`username`);
-        localStorage.removeItem(`token`);
-        location.reload();
-    });
+    // menuButtonsDiv.lastChild.addEventListener("click", () => {
+    //     localStorage.removeItem(`username`);
+    //     localStorage.removeItem(`token`);
+    //     location.reload();
+    // });
 }
 
 function generateAdminButton()
@@ -74,18 +77,18 @@ function generateAdminButton()
     if(!("admin" in localStorage))
         return;
 
-    menuButtonsDiv.innerHTML += '\
-    <div class="containerButton">\
-    <button id="logoutButton">\
-        ADMIN PAGE\
-    </button>\
-    <img id="startImage" class="buttonImg" src="src/media/logo.png">\
-    </div>';
+    menuButtonsDiv.innerHTML += `
+    <div class="containerButton">
+    <button id="adminPageButton" onclick='(function(){ window.location.href = "./admin.html"; })();'>
+        ADMIN PAGE
+    </button>
+    <img id="startImage" class="buttonImg" src="src/media/logo.png">
+    </div>`;
     
-    menuButtonsDiv.lastChild.addEventListener("click", () => {
-        window.location.href = "./admin.html";
-    });
+    // menuButtonsDiv.lastChild.addEventListener("click", () => {
+    //     window.location.href = "./admin.html";
+    // });
 }
 
-generateLogoutButton();
 generateAdminButton();
+generateLogoutButton();

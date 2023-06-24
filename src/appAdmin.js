@@ -15,9 +15,11 @@ function makeUserList(userList)
 
     for (let i = 0; i < userList.users.length; i++) {
         console.log(userList.users[i]);
+        const adminText = userList.users[i].admin ? `<h1 class="userAdmin">(admin)</h1>` : "";
         adminElementHtml += `
         <div class="userAdminContainer">
             <h1 class="userAdmin" > ${userList.users[i].username} </h1>
+            ${adminText}
             <button class="deleteUserButton">Delete User</button>
             <button class="makeAdminButton">Make User Admin</button>
         </div>
@@ -49,6 +51,7 @@ function makeUserList(userList)
             let parElement = button.parentElement;
             let userName = parElement.children[0].textContent;
             console.log(userName);
+            makeUserAdmin(userName);
         });
     }
 }
@@ -62,6 +65,22 @@ async function deleteUser(username)
             "Authorization": localStorage.getItem("token"),
         }
     });
+
+    location.reload();
+}
+
+async function makeUserAdmin(username)
+{
+    const response = await fetch(baseURL + `/users`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": localStorage.getItem("token"),
+        },
+        body: JSON.stringify({username: username.trim()})
+    });
+
+    location.reload();
 }
 
 async function getAllUsers()

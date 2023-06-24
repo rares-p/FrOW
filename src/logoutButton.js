@@ -9,6 +9,7 @@ export default function generateLogoutButton()
     
     console.log("exista existenta");
     buttonDiv.innerHTML = '<button id="logoutButton">Logout!</button>';
+    console.log(buttonDiv.firstChild);
     buttonDiv.firstChild.addEventListener("click", () => {
         localStorage.removeItem(`username`);
         localStorage.removeItem(`token`);
