@@ -4,58 +4,6 @@ body {
     overflow: visible;
     font-size: 1vw;
 }
-header{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 999;
-}
-
-#headerContainer {
-    position: relative;
-    top: 0px;
-    left: 0px;
-
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(235, 235, 235);
-    width: 100%;
-
-    justify-content: center;
-    align-items: center;
-}
-
-#headerContainer h1{
-    float: left;
-    color: rgb(121,167,218);
-    font-size: 4vw;
-    max-height: 8vh;
-
-}
-
-#headerContainer button {
-    float: right;
-    width: 35px;
-    height: 30px;
-    color: rgb(121,167,218);
-    margin-left: 50vw;
-}
-
-#logo{
-    width: 5vw;
-    height: 5vw;
-}
-
-#bar{
-    width: 100%;
-    position: relative;
-    left: 0px;
-    top: -20px;
-}
 
 .backgroundImage{
     top: 0; 
@@ -164,4 +112,212 @@ header{
     font-family: 'Fredoka', sans-serif;
 
     cursor: pointer;
+}
+
+#profileContainer{
+    margin-top: 11vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameDataContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border-radius: 2rem;
+    background-color: white;
+
+    width: fit-content;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    filter: drop-shadow(-10px 10px 20px #090934);
+
+    margin-bottom: 1rem;
+
+}
+
+.highscoreDecorationContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.decorationImg{
+    width: 4rem;
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    background-color: rgb(101,90,225);
+    margin-left: 1rem;
+    border-radius: 2rem;
+    align-items: center;
+}
+
+.infoText{
+    color: white;
+    font-size: large;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.indexGameData{
+    position: absolute;
+    color: white
+}
+
+.infoImg{
+    width: 2rem;
+}
+
+#msgContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-bottom: 2rem;
+    transform: translateX(-2rem);
+
+    filter: drop-shadow(-10px 10px 20px #090934);
+}
+
+#msgContainerSmaller{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(101,90,225);
+    border-radius: 2rem;
+
+    padding: 0.5rem;
+    padding-left: 3rem;
+}
+
+.msgTxt{
+    font-size: large;
+    color: white;
+}
+
+#txtMsgContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#msgBeginImg{
+    height: 7rem;
+    transform: translateX(4rem);
+    filter: drop-shadow(-5px 5px 20px #090934);
+}
+#msgEndImg{
+    height: 7rem;
+}
+
+#msgContainer button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#msgContainer button>img{
+    height: 4rem;
+}
+
+#changeDifficultyButtonLeft{
+    transform: translateX(5rem);
+    margin-right: 1rem;
+}
+#changeDifficultyButtonLeft:hover{
+    transform: translateX(5rem) scale(1.15);
+}
+
+#changeDifficultyButtonRight{
+    margin-left: 1rem;
+}
+#changeDifficultyButtonRight:hover{
+    transform: scale(1.15);
+}
+
+@media only screen and (max-width: 950px) {
+
+    #msgContainer button>img{
+        height: 2rem;
+    }
+
+    #msgContainer button{
+        width: 2rem;
+    }
+
+    .msgTxt{
+        font-size: small;
+    }
+
+    #profileContainer{
+        margin-top: 8vh;
+    }
+
+    #changeDifficultyButtonLeft{
+        transform: translateX(5rem);
+        margin-right: 1rem;
+    }
+    #changeDifficultyButtonLeft:hover{
+        transform: translateX(5rem) scale(1.15);
+    }
+
+    .infoText{
+        font-size: small;
+        margin-left: 5px;
+        margin-right: 0px;
+    }
+    .infoImg{
+        height: 2rem;
+    }
+
+    .infoContainer{
+        margin-left: 0px;
+        margin-bottom: 5px;
+    }
+
+    .gameDataContainer{
+        flex-direction: column;
+        width: 60%;
+    }
+
+    #msgBeginImg{
+        display: none;
+    }
+
+    #msgEndImg{
+        display: none;
+    }
+
+    #msgContainer{
+        transform: translateX(0px);
+    }
+
+    #changeDifficultyButtonLeft{
+        transform: translateX(0px);
+    }
+
+    #msgContainerSmaller{
+        padding-left: 1rem;
+    }
 }

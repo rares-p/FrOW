@@ -1,16 +1,17 @@
-//document.getElementById("formContainer").innerHTML += 
-const baseURL = "http://10.20.0.31:5000";
+import GameData from './components/GameData.js'
+
+const baseURL = "http://192.168.1.137:5000"
 
 let difficulty = 0;
 async function getStatatisticsForDifficulty(difficulty)
 {
-    const username = sessionStorage.getItem("username");
-    const data = {username, difficulty};
+    const data = {difficulty};
 
     const response = await fetch(baseURL + "/getAverage", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            "Authorization": localStorage.getItem("token"),
         },
         body: JSON.stringify(data)
     });
@@ -30,18 +31,19 @@ function changeStats(difficulty, averageTime, averageBoardSize, gamesPlayed, ave
 
 function changeAttempts(startdate, timetaken, maxtime, columns, rows, score, index)
 {
-    document.getElementById("difficultyStats").innerHTML += `<h2>NR: ${index}</h2><div>\
-    Start Date: ${startdate}\
-    \
-    Time taken: ${timetaken}\
-    \
-    Max Time: ${maxtime}\
-    \
-    Columns: ${columns}\
-    \
-    Rows: ${rows}\
-    \
-    Score: ${score}</div>`;
+    document.getElementById("difficultyStats").innerHTML += GameData();
+    //document.getElementById("difficultyStats").innerHTML += `<h2>NR: ${index}</h2><div>\
+    //Start Date: ${startdate}\
+    //\
+    //Time taken: ${timetaken}\
+    //\
+    //Max Time: ${maxtime}\
+    //\
+    //Columns: ${columns}\
+    //\
+    //Rows: ${rows}\
+    //\
+    //Score: ${score}</div>`;
 }
 
 async function changeDifficulty()
@@ -63,18 +65,16 @@ changeDifficulty(), 1000);
 
 async function getAllAttempts(difficulty)
 {
-    const username = sessionStorage.getItem("username");
-    const data = {username, difficulty};
+    const data = {difficulty};
 
     const response = await fetch(baseURL + "/getAttempt", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            "Authorization": localStorage.getItem("token"),
         },
         body: JSON.stringify(data)
     });
     console.log("raspuns la average stats: " + response);
     return response.json();
 }
-
-

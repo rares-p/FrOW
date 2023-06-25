@@ -40,6 +40,9 @@ header {
     justify-content: center;
 }
 
+#menuButtons {
+    padding-bottom: 4vh;
+}
 
 #menuButtons button {
     transform: translateX(2vw);
@@ -162,20 +165,47 @@ header {
     color: rgb(121, 167, 218);
     font-size: 4vw;
     max-height: 8vh;
-
 }
 
-#headerContainer button {
+#headerContainer #buttonContainer {
     float: right;
     width: 35px;
     height: 30px;
     color: rgb(121, 167, 218);
-    margin-left: 50vw;
+    margin-left: 30vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-top: 0.5rem;
+}
+
+#headerContainer #buttonContainer button{
+    transition: 0.3s;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+}
+
+#buttonContainer button:hover{
+    transform: scale(1.05);
+}
+
+#profileDecorationImg{
+    height: 5rem;
 }
 
 #logo {
     width: 5vw;
     height: 5vw;
+}
+
+#userName{
+    color: rgb(121, 167, 218);
+    font-size: 4vh;
+    margin-right: 0.5rem;
 }
 
 #bar {
@@ -346,6 +376,63 @@ header {
     transform: rotateY(180deg);
 }
 
+#endGame{
+    top: 50%;
+    left: 50%;
+
+    z-index: 10;
+
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    display: none;
+}
+
+#cloudContainer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#endText{
+    position: absolute;
+    text-align: center;
+    font-size: 3rem;
+    width: 20rem;
+    color: rgb(121, 167, 218);
+
+}
+
+#cloud{
+    width: 30rem;
+    filter: drop-shadow(-0.15vh 0.15vh 1vh rgba(55, 50, 156, 100));
+}
+
+#playAgain{
+    border-radius: 2rem;
+    margin-top: 1rem;
+    width: 20rem;
+    padding: 1rem;
+    font-size: 2rem;
+    font-family: 'Fredoka', sans-serif;
+    color: rgb(121, 167, 218);
+    outline: none;
+    border: none;
+
+    filter: drop-shadow(-0.15vh 0.15vh 1vh rgba(55, 50, 156, 100));
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#playAgain:hover{
+    transform: scale(1.05);
+}
+
 
 @media only screen and (max-width: 950px) {
     .cifra {
@@ -367,6 +454,26 @@ header {
     #logo {
         max-height: 10vw;
         margin-left: 5vw;
+    }
+
+    #userName{
+        font-size: large;
+    }
+
+    #headerContainer #buttonContainer {
+        margin-left: 5vw;
+        margin-top: 0px;
+    }
+
+    #headerContainer h1{
+    }
+
+    #headerContainer{
+        justify-content: start;
+    }
+
+    #profileDecorationImg{
+        height: 8vw;
     }
 }
 

@@ -55,6 +55,7 @@ function previousImage()
 
 function updateSearch(text)
 {
+    console.log("am cautat " + text);
     document.getElementById("fruitOptions").innerHTML = '';
     if(text == "")
         return;
@@ -68,4 +69,21 @@ function updateSearch(text)
     options.forEach(fruit => {
         document.getElementById("fruitOptions").innerHTML += '<option>' + fruit + '</option>';
     });
+}
+
+function searchFruitOnSubmit(value)
+{
+    console.log("caut fructul " + value);
+    for(let i = 0; i < fruitNames.length; i ++) 
+    {
+        if(fruitNames[i] === value)
+        {
+            index = i + 1;
+            console.log("lam gasit la " + index);
+            let img = document.getElementById("fruitCard");
+            img.src = "./src/media/FaceCard" + index + ".png";
+            updateDescription();
+            return;
+        }
+    }
 }
