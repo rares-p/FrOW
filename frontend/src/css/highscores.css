@@ -1,0 +1,313 @@
+
+.highscoresDivContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.highscoresContainer{
+    margin-top: -2vh;
+    background-color: white;
+    width: 60%;
+    border-radius: 5vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    filter: drop-shadow(-19px 22px 20px #090934);
+
+    margin-bottom: 20px;
+}
+
+.highscore{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.highscoreDecorationContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.highscoreUserName{
+    position: absolute;
+    background-color: rgb(101,90,225);
+    border-radius: 0 20px 20px 0;
+    padding: 1vw;
+    padding-right: 5vw;
+    margin-right: 1vw;
+    margin-left: 70%;
+    width: max-content;
+}
+
+.decorationImg{
+    max-width: 6vw;
+    margin-left: 10px;
+    width: 15VW;
+}
+
+.highscore{
+    margin-left: 5vw;
+}
+
+.highscore h1{
+    font-size: 2.5vw;
+    color: rgb(101,90,225);
+}
+
+#pageText{
+    font-size: 1.5vw;
+    color: rgb(101,90,225);
+    margin-left: 10vw;
+}
+
+.highscore .highscoreUserName{
+    font-size: 1.5vw;
+    color: white;
+}
+
+.highscore:nth-child(2n){
+    margin-left: 10vw;
+    transform: translateY(n*-5vh);
+}
+
+
+.highscoreHeaderContainer{
+    position: relative;
+    margin-top: 25vh;
+    display: flex;
+    flex-direction: row;
+
+    margin-left: 15%;
+
+    filter: drop-shadow(-19px 22px 20px #090934);
+
+    z-index: 998;
+}
+
+.achievmentContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10vw;
+}
+
+.decorationImgAchievment{
+    position: absolute;
+    width: 10%;
+}
+
+.achievmentImg{
+    position: absolute;
+    max-width: 3vw;
+}
+
+.achievmentTxt{
+    background-color: rgb(101,90,225);
+    color: white;
+    border-radius: 0 20px 20px 0;
+    padding: 1vw;
+    padding-right: 5vw;
+    margin-right: 1vw;
+    transform: translateX(-2.5vw);
+
+    font-size: 3vw;
+}
+
+
+.highscoresButtonContainerDiv{
+    position: relative;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 5vw;
+}
+
+.highscoresButtonContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    
+    filter: drop-shadow(-19px 22px 20px #090934);
+}
+
+.buttonHighscoresPage{
+    border: 0.5vw solid;
+    border-color: rgb(249,186,24);
+    border-radius: 1vw;
+    width: 4vw;
+    height: 4vw;
+    background-color: rgb(249,186,24);
+    color: white;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.5vw;
+
+    margin-left: 0.5vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.2s;
+}
+
+.buttonHighscoresPage:hover{
+    background-color: white;
+    color: rgb(249,186,24);
+}
+
+
+.pointsContainer{
+    display: flex;
+    flex-direction: row;
+    align-items:end;
+    height: 100%;
+}
+.point{
+    border-radius: 0.5vw;
+    width: 2vw;
+    height: 2vw;
+    background-color: rgb(249,186,24);
+
+    margin-left: 0.5vw;
+}
+
+
+.gotoContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.gotoContainer label{
+    font-size: 2vw;
+    color: white;
+    margin-left: 0.5vw;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type=number]{
+    font-family: 'Fredoka', sans-serif;
+    color: white;
+    background-color: rgb(249,186,24);
+    width: 4vw;
+    height: 4vw;
+    font-size: 2vw;
+    border: 0px;
+    border-radius: 1vw;
+    text-align: center;
+
+    margin-left: 1vw;
+}
+
+.txtHighscoreScore{
+    position: relative;
+}
+
+
+@media only screen and (max-width: 900px) {
+    .highscoresContainer{
+        width: 90%;
+    }
+    .highscoreHeaderContainer{
+        margin-left: 5%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    h1{
+        font-size: medium;
+    }
+
+    .decorationImg{
+        max-width: 15vw;
+    }
+
+    .highscore .highscoreUserName{
+        font-size: large;
+        transform: translateX(0px);
+    }
+
+    .highscore h1{
+        font-size: large;
+    }
+
+    .achievmentTxt{
+        font-size: large;
+        transform: translateX(0vw);
+    }
+
+    .decorationImgAchievment{
+        width: 20%;
+    }
+
+    .achievmentImg{
+        max-width: 10vw;
+    }
+
+    #pageText{
+        font-size: medium;
+    }
+
+    .buttonHighscoresPage{
+        width: 8vw;
+        height: 8vw;
+        font-size: small;
+    }
+
+    .gotoContainer label{
+        font-size: small;
+    }
+
+    input[type=number]{
+        width: 8vw;
+        height: 8vw;
+        font-size: small;
+    }
+}
+
+
+/*
+ANIMATIONS
+*/
+
+.jello {
+    animation: jello 0.9s both;
+}
+
+@keyframes jello {
+    0% {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+    30% {
+      -webkit-transform: scale3d(1.25, 0.75, 1);
+              transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+      -webkit-transform: scale3d(0.75, 1.25, 1);
+              transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+      -webkit-transform: scale3d(1.15, 0.85, 1);
+              transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+      -webkit-transform: scale3d(0.95, 1.05, 1);
+              transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+      -webkit-transform: scale3d(1.05, 0.95, 1);
+              transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+              transform: scale3d(1, 1, 1);
+    }
+}

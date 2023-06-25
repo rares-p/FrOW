@@ -1,0 +1,559 @@
+
+body {
+    font-family: Arial, serif;
+    font-family: 'Fredoka', sans-serif;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#menuLogo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#logoText {
+    max-width: 25vw;
+}
+#logoImage{
+    max-width: 25vw;
+}
+
+.alignCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menuButtons {
+    padding-bottom: 4vh;
+}
+
+#menuButtons button {
+    transform: translateX(2vw);
+
+    width: 25vw;
+    height: 8vh;
+    margin-top: 2.5vh;
+    border: hidden;
+    border-radius: 4vh;
+    box-shadow: -1vh 1vh 2vh rgba(0, 0, 0, 0.4);
+
+    font-size: 2.3vw;
+    font-weight: bold;
+    color: rgb(121, 167, 218);
+    font-family: 'Fredoka', sans-serif;
+
+    cursor: pointer;
+}
+
+#menuButtons button:hover {
+    background-color: rgba(101, 90, 225);
+    color: white;
+    transition: 0.2s;
+}
+#startButton:hover ~ #startImage{
+    opacity: 1;
+}
+#learnButton:hover ~ #learnImage{
+    opacity: 1;
+}
+#highscoresButton:hover ~ #highscoresImage{
+    opacity: 1;
+ }
+#aboutButton:hover ~ #aboutImage{
+    opacity: 1;
+}
+
+#startImage, #learnImage, #highscoresImage, #aboutImage{
+    opacity:0;
+    transition: 0.3s;
+}
+
+.containerButton{
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+}
+
+.buttonImg{
+    width: 5vw;
+    height: 5vw;
+    transform: translateX(-1vw);
+}
+
+#difficultyPage{
+    margin-top: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#sliders{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2vh;
+    margin-bottom: 20vh;
+
+    text-align: center;
+}
+#sliders .slider {
+    -webkit-appearance: none;
+    width: 25vw;
+    height: 1.5vh;
+    border-radius: 0.5vh;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+#sliders .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.25vw;
+    height: 2.75vh;
+    border-radius: 50%;
+    background: rgba(101, 90, 225);
+    cursor: pointer;
+}
+#sliders .slider::-moz-range-thumb {
+    width: 1.25vw;
+    height: 2.75vh;
+    border-radius: 50%;
+    background: rgba(101, 90, 225);
+    cursor: pointer;
+}
+
+
+#headerContainer {
+    position: relative;
+    top: 0px;
+    left: 0px;
+
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(235, 235, 235);
+    width: 100%;
+
+    max-height: 12vh;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#headerContainer h1 {
+    float: left;
+    color: rgb(121, 167, 218);
+    font-size: 4vw;
+    max-height: 8vh;
+}
+
+#headerContainer #buttonContainer {
+    float: right;
+    width: 35px;
+    height: 30px;
+    color: rgb(121, 167, 218);
+    margin-left: 30vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-top: 0.5rem;
+}
+
+#headerContainer #buttonContainer button{
+    transition: 0.3s;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+}
+
+#buttonContainer button:hover{
+    transform: scale(1.05);
+}
+
+#profileDecorationImg{
+    height: 5rem;
+}
+
+#logo {
+    width: 5vw;
+    height: 5vw;
+}
+
+#userName{
+    color: rgb(121, 167, 218);
+    font-size: 4vh;
+    margin-right: 0.5rem;
+}
+
+#bar {
+    width: 100%;
+    position: relative;
+    left: 0px;
+    top: -1vw;
+}
+
+#uiContainer {
+    position: relative;
+    top: -8vh;
+    max-height: 8vh;
+    color: white;
+    display: flex;
+
+
+    margin-bottom: 0vh;
+    margin-top: 4vh;
+    margin-left: 15vh;
+    margin-right: 15vh;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#uiContainer h1 {
+    font-size: 5vh;
+}
+
+#timer {
+    flex: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#timerImage {
+    max-height: 7vh;
+}
+
+.cifra {
+    max-height: 7vh;
+    margin-left: 0.2vw;
+    margin-right: 0.2vw;
+}
+
+#timer img:nth-of-type(3) {
+    transform: translateX(-1vw);
+}
+
+#timer img:nth-of-type(4) {
+    transform: translateX(-2vw);
+}
+
+#score {
+    flex: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#score img:nth-of-type(2) {
+    transform: translateX(-1vw);
+}
+
+#score img:nth-of-type(3) {
+    transform: translateX(-2vw);
+}
+
+#score img:nth-of-type(4) {
+    transform: translateX(-3vw);
+}
+
+#level {
+    flex: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#level img:nth-of-type(2) {
+    transform: translateX(-10px);
+}
+
+#level img:nth-of-type(3) {
+    transform: translateX(-20px);
+}
+#level img:nth-of-type(4) {
+    transform: translateX(-30px)
+}
+
+#game {
+    position: relative;
+    top: 20vh;
+
+    display: flex;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    margin-top: 4vw;
+}
+
+.cardsRow {
+    flex: 25%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.backCard {
+    min-height: 16vh;
+    width: auto;
+    min-width: 12vh;
+    max-width: 12vh;
+    padding: 1vh;
+    /*
+    Pentru smaller screen width o sa trebuiasca schimbate, sa fie mai mici
+    Ar trebui de fapt chiar niste calcule facute in functie de cate carti vrei sa pui etc
+    */
+
+    margin: 0px;
+
+    perspective: 600px;
+
+    filter: drop-shadow(-0.15vh 0.15vh 1vh rgba(55, 50, 156, 100));
+
+
+}
+
+.backgroundImage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: 0.5s; /* turn back to normal*/
+    transform-style: preserve-3d;
+
+    cursor: pointer;
+}
+
+.card_face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+
+    /*transition: 1s;*/
+}
+
+.card_face--front {
+    transform: rotateY(180deg);
+}
+
+.card.is-flipped {
+    transition: 0.9s; /* turn to show face */
+    transform: rotateY(180deg);
+}
+
+#endGame{
+    top: 50%;
+    left: 50%;
+
+    z-index: 10;
+
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    display: none;
+}
+
+#cloudContainer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#endText{
+    position: absolute;
+    text-align: center;
+    font-size: 3rem;
+    width: 20rem;
+    color: rgb(121, 167, 218);
+
+}
+
+#cloud{
+    width: 30rem;
+    filter: drop-shadow(-0.15vh 0.15vh 1vh rgba(55, 50, 156, 100));
+}
+
+#playAgain{
+    border-radius: 2rem;
+    margin-top: 1rem;
+    width: 20rem;
+    padding: 1rem;
+    font-size: 2rem;
+    font-family: 'Fredoka', sans-serif;
+    color: rgb(121, 167, 218);
+    outline: none;
+    border: none;
+
+    filter: drop-shadow(-0.15vh 0.15vh 1vh rgba(55, 50, 156, 100));
+
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#playAgain:hover{
+    transform: scale(1.05);
+}
+
+
+@media only screen and (max-width: 950px) {
+    .cifra {
+        max-height: 5vw;
+    }
+
+    #uiContainer h1 {
+        font-size: 6vw;
+    }
+
+    #headerContainer h1 {
+        font-size: 3vw;
+    }
+
+    #uiContainer {
+        top: -5vw;
+    }
+
+    #logo {
+        max-height: 10vw;
+        margin-left: 5vw;
+    }
+
+    #userName{
+        font-size: large;
+    }
+
+    #headerContainer #buttonContainer {
+        margin-left: 5vw;
+        margin-top: 0px;
+    }
+
+    #headerContainer h1{
+    }
+
+    #headerContainer{
+        justify-content: start;
+    }
+
+    #profileDecorationImg{
+        height: 8vw;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #headerContainer h1 {
+        font-size: 4vw;
+    }
+
+    .cifra {
+        max-height: 5vw;
+    }
+
+    #uiContainer {
+        top: -7vw;
+    }
+
+    .buttonImg{
+        width: 10vw;
+        height: 10vw;
+    }
+
+    #logoText {
+        max-width: 50vw;
+    }
+    #logoImage{
+        max-width: 50vw;
+    }
+
+    #menuButtons button {
+        width: 50vw;
+        height: 6vh;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .backCard {
+        min-height: 24vw;
+        width: auto;
+        min-width: 18vw;
+        max-width: 18vw;
+        max-width: 12vh;
+    }
+
+    #logo {
+        max-height: 12vw;
+    }
+
+    #headerContainer h1 {
+        font-size: 6vw;
+    }
+}
+
+
+/*
+ANIMATIONS
+*/
+
+.wobble {
+    animation: wobble 0.6s both;
+}
+
+@keyframes wobble {
+    0%,
+    100% {
+        transform: translateX(0%);
+        transform-origin: 50% 50%;
+    }
+    15% {
+        transform: translateX(-30px) rotate(-6deg);
+    }
+    30% {
+        transform: translateX(15px) rotate(6deg);
+    }
+    45% {
+        transform: translateX(-15px) rotate(-3.6deg);
+    }
+    60% {
+        transform: translateX(9px) rotate(2.4deg);
+    }
+    75% {
+        transform: translateX(-6px) rotate(-1.2deg);
+    }
+}

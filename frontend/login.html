@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale =1.0"/>
+    <title>Fruit App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/login.css">
+</head>
+<body>
+    <noscript>Please enable javascript for this app to work.</noscript>
+
+    <img class="backgroundImage" src="src/media/background.png">
+
+    <header>
+        <header id="headerContainer">
+            <input type="image" id="logo" src="../src/media/logo.png" onclick="location.replace('./index.html')">
+            <h1>Fruits on the web</h1>
+            <button onclick="location.replace('./index.html')">
+                &#9776;
+            </button>
+        </header>
+        <img id="bar" src="src/media/bar.png">
+    </header>
+    <div id="allcontainer">
+        <div id="container">
+            <div id="formContainer">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"><br><br>
+                <div id="submitButton">
+                    <button onclick="login(document.getElementById('username').value, document.getElementById('password').value)">Login!</button>
+                </div>
+                <div id="dontHaveTxt">Don't have an account?</div>
+                <button id="switchLoginRegister" onclick="switchToRegister()">Go to register</button>
+            </div>
+        </div>
+    </div>
+    <script src="src/login.js"></script>
+</body>
+</html>

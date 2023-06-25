@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale =1.0"/>
+    <title>Fruit App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/app.css">
+</head>
+<body>
+<noscript>Please enable javascript for this app to work.</noscript>
+
+<img class="backgroundImage" src="src/media/background.png">
+<div id="difficultyHeader"></div>
+<div id="difficultyPage">
+    <div id="sliders">
+        <div id="rowSlider">
+            <h1 id="rowValue">Rows: 2</h1>
+            <input type="range" min="2" max="10" value="2" class="slider" id="rowRange">
+        </div>
+        <div id="colSlider">
+            <h1 id="colValue">Columns: 3</h1>
+            <input type="range" min="2" max="4" value="3" class="slider" id="colRange">
+        </div>
+        <div id="timeSlider">
+            <h1 id="timeValue">Time: 1:30</h1>
+            <input type="range" min="30" max="300" value="90" class="slider" id="timeRange">
+        </div>
+    </div>
+
+    <div id="menuButtons">
+        <button id="startButton" onclick='{startGame(document.getElementById("rowRange").value, document.getElementById("colRange").value, document.getElementById("timeRange").value)}'>
+            START
+        </button>
+    </div>
+</div>
+<script src="src/difficulty.js" type="module"></script>
+</body>
+</html>

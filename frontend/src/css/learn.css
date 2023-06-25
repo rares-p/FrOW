@@ -1,0 +1,243 @@
+body {
+    font-family: Arial, serif;
+    font-family: 'Fredoka', sans-serif;
+    overflow: visible;
+    font-size: 1vw;
+}
+
+.backgroundImage{
+    top: 0; 
+    left: 0; 
+    z-index: -1;
+    min-height: 100%;
+    position: fixed;
+        
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#slideShow{
+    background: transparent;
+    position: relative;
+    align-self: center;
+    display: inline-block;
+    background-image: url("../media/decoration3.png");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    align-content: center;
+    background-position: 0%;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:row;
+    width: 22.5vw;
+    height: 23.4vw;
+    margin-top: 3%;
+
+    /*left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);*/
+}
+
+#learnContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#upperContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+#container{
+    background-color: white;
+    border-radius: 2vw;
+    align-self:center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    margin-top: 20vw;
+    margin-bottom: 2vw;
+    width: 70%;
+}
+
+#containerTitle{
+    float: left;
+}
+
+#containerTitle p{
+    margin: 5%;
+    background-color: #645be1;
+    padding: 2vw;
+    border-radius: 0.7vw;
+    font-size: 2vw;
+}
+/*
+#leftArrow{
+    background-color: transparent;
+    border: 0px;
+    display: flex;
+    align-content: center;
+    position: relative;
+    flex-direction: row;
+    top: 50%;
+}*/
+
+#fruitCard{
+    width: 300px;
+    display: block;
+    position: relative;
+    width: 11.25vw;
+}
+
+#leftArrow{
+    background-color: transparent;
+    border: 0px;
+    transition: 0.4s;
+    cursor: pointer;
+    /*display:block;
+    float: left;
+    left: 0;
+    margin-top: 25%;
+    size-adjust: 2vw;*/
+}
+
+#leftArrow:hover{
+    transform: scale(1.25);
+}
+
+#rightArrow{
+    background-color: transparent;
+    border: 0px;
+    transition: 0.4s;
+    cursor: pointer;
+    /*display: flexbox;
+    float: left;
+    margin-top: 25%;*/
+}
+
+#rightArrow:hover{
+    transform: scale(1.25);
+}
+
+.paragraph{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: block;
+    left: 0;
+    float: left;
+}
+
+.cardArrow{
+    width: 3vw;
+}
+
+#upperContainer p{
+    margin-left: 2vw;
+    font-size: 1.5vw;
+    transform: translateX(-1vw);
+    color: rgb(121,167,218);
+}
+
+#searchContainer{
+    font-size: 1.5vw;
+    float: right;
+
+    background-color: rgb(121,167,218);
+    border-radius: 2vw;
+    margin: 1vw;
+
+    display: flex;
+
+    width: 50%;
+
+    transform: translateY(-1vw);
+
+    filter: drop-shadow(-10px 8px 21px #19317E);
+}
+
+#searchContainer form{
+    position: relative;
+    float: right;
+    margin: 1vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchContainer input[type=text]{
+    height: 3vw;
+    width: 25vw;
+    border-radius: 1.5vw;
+    border: none;
+
+    font-size: 1.5vw;
+    color: rgb(114,170,221);
+
+    font-family: 'Fredoka', sans-serif;
+
+    padding: 1vw;
+}
+
+#upperInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#upperInfo img{
+    max-width: 5vw;
+    margin: 1vw;
+    margin-right: 0px;
+}
+
+#searchFruit{
+    border: none;
+    border-radius: 0.5vw;
+    /*border: 0.1vw solid black;*/
+    background: transparent;
+}
+
+#searchFruitImg{
+    height: 3vw;
+    transition: 0.4s;
+}
+
+#searchFruitImg:hover{
+    filter: drop-shadow(-5px 5px 21px white);
+    height: 2.5vw;
+}
+
+#searchFruit img, input, label{
+    vertical-align:middle;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .paragraph p, ul{
+        font-size: small;
+    }
+
+    .paragraph h3{
+        font-size: medium;
+    }
+
+    #searchContainer input[type=text] {
+        font-size: medium;
+    }
+
+    #upperContainer p{
+        font-size: small;
+    }
+
+    #container{
+        width: 90%;
+    }
+}
