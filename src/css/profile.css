@@ -115,7 +115,7 @@ body {
 }
 
 #profileContainer{
-    margin-top: 7vw;
+    margin-top: 11vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -179,7 +179,7 @@ body {
 }
 
 .infoImg{
-    width: 2.5rem;
+    width: 2rem;
 }
 
 #msgContainer{
@@ -254,4 +254,70 @@ body {
 }
 #changeDifficultyButtonRight:hover{
     transform: scale(1.15);
+}
+
+@media only screen and (max-width: 950px) {
+
+    #msgContainer button>img{
+        height: 2rem;
+    }
+
+    #msgContainer button{
+        width: 2rem;
+    }
+
+    .msgTxt{
+        font-size: small;
+    }
+
+    #profileContainer{
+        margin-top: 8vh;
+    }
+
+    #changeDifficultyButtonLeft{
+        transform: translateX(5rem);
+        margin-right: 1rem;
+    }
+    #changeDifficultyButtonLeft:hover{
+        transform: translateX(5rem) scale(1.15);
+    }
+
+    .infoText{
+        font-size: small;
+        margin-left: 5px;
+        margin-right: 0px;
+    }
+    .infoImg{
+        height: 2rem;
+    }
+
+    .infoContainer{
+        margin-left: 0px;
+        margin-bottom: 5px;
+    }
+
+    .gameDataContainer{
+        flex-direction: column;
+        width: 60%;
+    }
+
+    #msgBeginImg{
+        display: none;
+    }
+
+    #msgEndImg{
+        display: none;
+    }
+
+    #msgContainer{
+        transform: translateX(0px);
+    }
+
+    #changeDifficultyButtonLeft{
+        transform: translateX(0px);
+    }
+
+    #msgContainerSmaller{
+        padding-left: 1rem;
+    }
 }

@@ -154,8 +154,7 @@ async function getHighscoresPage(page)
     const response = await fetch(baseURL + `/highscores?page=${page}`, {
         method: "GET",
         headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*"
+            "Content-Type": "application/json"
         }
     });
 
