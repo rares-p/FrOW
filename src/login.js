@@ -75,7 +75,7 @@ function switchToLogin()
     <label for=\"username\">Username:</label>\
     <input type="text" id="username" name="username"><br><br>\
     <label for="password">Password:</label>\
-    <input type="text" id="password" name="password"><br><br>\
+    <input type="password" id="password" name="password"><br><br>\
     <div id="submitButton">\
         <button onclick="login(document.getElementById(\'username\').value, document.getElementById(\'password\').value)">Login!</button>\
     </div>\
@@ -92,7 +92,7 @@ function switchToRegister()
     <label for=\"username\">Username:</label>\
     <input type="text" id="username" name="username"><br><br>\
     <label for="password">Password:</label>\
-    <input type="text" id="password" name="password"><br><br>\
+    <input type="password" id="password" name="password"><br><br>\
     <div id="submitButton">\
         <button onclick="register(document.getElementById(\'firstName\').value, document.getElementById(\'lastName\').value, document.getElementById(\'username\').value, document.getElementById(\'password\').value)">Register!</button>\
     </div>\
